@@ -1,0 +1,147 @@
+--Secuencias
+CREATE SEQUENCE sec_gastronomia  
+    AS tinyint 
+	START WITH 1
+    INCREMENT BY 1  
+    MINVALUE 1    
+    NO CYCLE  
+GO
+
+CREATE SEQUENCE sec_comercio  
+    AS tinyint 
+	START WITH 1
+    INCREMENT BY 1  
+    MINVALUE 1    
+    NO CYCLE  
+GO
+
+-- Tablas
+CREATE TABLE area (
+	id UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+	nombre VARCHAR(250),
+
+	creado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+	modificado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+	PRIMARY KEY (id)
+)
+GO
+
+CREATE TABLE rol (
+	id UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+	nombre VARCHAR(250) NOT NULL,
+	descripcion VARCHAR(255) NOT NULL,
+
+	creado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+	modificado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+	PRIMARY KEY (id)
+)
+GO
+
+CREATE TABLE usuario (
+	id UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+	nombre VARCHAR(100) NOT NULL,
+	apellido_paterno VARCHAR(100) NOT NULL,
+	apellido_materno VARCHAR(100) NOT NULL,
+	matricula VARCHAR(50) NOT NULL UNIQUE,
+	contrasenia VARCHAR(250) NOT NULL,
+	puntos INT NOT NULL DEFAULT 1999,
+	correo VARCHAR(150) NULL UNIQUE,
+	telefono VARCHAR(10) NULL UNIQUE,
+	activo BIT DEFAULT 1,
+	fk_area UNIQUEIDENTIFIER NOT NULL,
+	fk_rol UNIQUEIDENTIFIER NOT NULL,
+
+	creado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+	modificado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+	borrado_en DATETIME DEFAULT NULL,
+
+	PRIMARY KEY (id),
+    FOREIGN KEY (fK_area) REFERENCES area(id),
+    FOREIGN KEY (fk_rol) REFERENCES rol(id)
+)
+GO
+
+CREATE TABLE plaza (
+	id UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+	nombre VARCHAR(100) NOT NULL,
+	direccion VARCHAR(250) NOT NULL,
+
+	creado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+	modificado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+	PRIMARY KEY (id)
+)
+GO
+
+CREATE TABLE zona (
+	id UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+	nombre varchar(1) NOT NULL,
+
+	creado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+	modificado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+	PRIMARY KEY (id)
+)
+GO
+
+CREATE TABLE lugares (
+	id UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+	numero SMALLINT IDENTITY(1,1) NOT NULL,
+	fk_area UNIQUEIDENTIFIER NOT NULL,
+
+	creado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+	modificado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+	PRIMARY KEY (id)
+)
+GO
+
+CREATE TABLE evento (
+	id UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+	nombre VARCHAR(100) NOT NULL,
+	fecha DATETIME NOT NULL,
+	activo BIT NOT NULL DEFAULT 1,
+	fk_plaza UNIQUEIDENTIFIER NOT NULL,
+
+	creado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+	modificado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+	PRIMARY KEY (id),
+    FOREIGN KEY (fk_plaza) REFERENCES plaza(id)
+)
+GO
+
+CREATE TABLE usuario_evento (
+	id UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+	puntos INT NOT NULL,
+	fk_usuario UNIQUEIDENTIFIER NOT NULL,
+	fk_evento UNIQUEIDENTIFIER NOT NULL,
+
+	creado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+	modificado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+	PRIMARY KEY (id),
+	FOREIGN KEY (fk_usuario) REFERENCES usuario(id),
+	FOREIGN KEY (fk_evento) REFERENCES evento(id)
+)
+GO
+
+-- Relllenado de catalogos
+INSERT INTO dbo.area (nombre) values ('Gastronomia')
+INSERT INTO dbo.area (nombre) values ('Comercio')
+
+SELECT * FROM dbo.area
+
+INSERT INTO dbo.rol (nombre, descripcion) values ('Administrador', 'Administrador del portal')
+INSERT INTO dbo.rol (nombre, descripcion) values ('Usuario', 'Usuario del portal')
+
+SELECT * FROM dbo.rol
+SELECT * FROM dbo.usuario
+
+-- Borrado de tablas
+--drop table usuario_evento
+--drop table usuario
+
+--delete usuario

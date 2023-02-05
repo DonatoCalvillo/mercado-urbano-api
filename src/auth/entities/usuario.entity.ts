@@ -55,6 +55,7 @@ export class Usuario {
     () => Area,
     {cascade: true, eager: true}
   )
+
   @JoinColumn({
     name: "fk_area", referencedColumnName: "id"
   })

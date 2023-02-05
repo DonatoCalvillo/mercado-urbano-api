@@ -16,6 +16,7 @@ import { Usuario, Rol, Area } from './entities';
 
 import { IJwtPayload } from './interfaces/jwt-payload.interface';
 // import {  } from './entities/area.entity';
+import { IResponseLogin } from './interfaces/response.interface';
 
 @Injectable()
 export class AuthService {
@@ -34,45 +35,46 @@ export class AuthService {
     private readonly jwtService: JwtService
   ) {}
 
-  async getAllUsers(paginationDto: PaginationDto) {
-    const { limit = 10, offset = 0 } = paginationDto
-    const usuarios =  await this.useRepository.find({
-      take: limit,
-      skip: offset,
-      relations: {
-        area: true,
-        rol: true
-      }
-    })
-
-    return usuarios.map( usuario =>{
-        
-    })
-  }
-
   async create(createUsuarioDto: CreateUsuarioDto) {
     try {
       const { contrasenia, fk_rol, fk_area, ...userData } = createUsuarioDto
 
-      const rol = await this.rolRepository.findOne({where: {id: fk_rol}})
+      const emailVerify = await this.useRepository.findOne({where: {correo: userData.correo}})
 
-      const area = await this.areaRepository.findOne({where: {id: fk_area}})
+      if ( emailVerify )
+        throw new BadRequestException("Correo ya registrado.")
 
+      const rol = await this.rolRepository.findOne({where: {nombre: fk_rol}})
+
+      const area = await this.areaRepository.findOne({where: {nombre: fk_area}})
+
+      //Armar matricula
+      const secuencia = await this.useRepository.query(`SELECT COUNT(1) AS secuencia FROM usuario WHERE fk_area='${area.id}'`)
+
+      const secuenciaNumeric = Number(secuencia[0].secuencia) + 1
+      
+      const matricula = this.generateMatricula(secuenciaNumeric.toString(), area.nombre)
+      
+      //to do, recibir y validar jwt que sea admin
       const user = this.useRepository.create({
         ...userData,
         contrasenia: bcrypt.hashSync( contrasenia, 10 ),
         rol,
-        area
+        area,
+        matricula
       })
 
       await this.useRepository.save( user )
 
       delete user.contrasenia
 
-      return {
-        ...user,
-        token: this.getJwtToken({ matricula: user.matricula })
-      }
+      const response : IResponseLogin = {
+        message: "Usuario creado exitosamente.",
+        user
+        // token: this.getJwtToken({ matricula: user.matricula })
+      } 
+
+      return response
 
     } catch (error) {
       this.handleDBErrors( error )
@@ -100,10 +102,15 @@ export class AuthService {
     }
 
     return {
+      menssage: "Acceso exitoso.",
       usuario : final_user,
       token: this.getJwtToken({ matricula: user.matricula })
     };
 
+  }
+
+  async validateToken (token = '') {
+    return token
   }
 
   private getJwtToken( payload: IJwtPayload ) {
@@ -112,12 +119,18 @@ export class AuthService {
   }
 
   private handleDBErrors ( error: any ): never {
-    if(error.originalError.info.number == 2627)
-      throw new BadRequestException( error.originalError.info.message )
+    // if(error.originalError.info.number == 2627)
+    //   throw new BadRequestException( error.originalError.info.message )
 
-    console.log(  error.originalError ) 
+    console.log( error.sqlMessage ) 
 
-    throw new InternalServerErrorException("Favor de revisar los logs del API")
+    throw new InternalServerErrorException( error.sqlMessage )
+  }
+
+  private generateMatricula = (secuencia:string, area:string): string => {
+    const number = secuencia.padStart(3,'0')
+
+    return `CAR${number}-${area[0]}`
   }
 
 }

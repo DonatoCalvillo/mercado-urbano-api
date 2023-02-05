@@ -14,10 +14,6 @@ export class CreateUsuarioDto {
   @IsString({ message: "El apellido materno debe ser una cadena de caracteres." })
   @MinLength(1, { message: "El apellido materno debe tener al menos un caracter. "})
   apellido_materno: string;
-
-  @IsString()
-  @MinLength(1)
-  matricula: string;
   
   @IsString({ message: "La contraseña debe ser una cadena de caracteres." })
   @MinLength(6, { message: "La contraseña debe ser de al menos 6 caracteres." })

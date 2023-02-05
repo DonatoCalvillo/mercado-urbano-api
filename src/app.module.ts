@@ -16,7 +16,7 @@ import { CommonModule } from './common/common.module';
       password: process.env.DB_PASSWORD,
       entities:[],
       autoLoadEntities: true,
-      synchronize: true, //In production most be FALSE
+      synchronize: false, //In production most be FALSE
     }),
     AuthModule,
     CommonModule,

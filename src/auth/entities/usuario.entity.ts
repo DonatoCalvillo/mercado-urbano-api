@@ -1,4 +1,5 @@
 import { BeforeInsert, BeforeUpdate, Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+
 import { Rol } from './rol.entity';
 import { Area } from './area.entity';
 
@@ -75,18 +76,6 @@ export class Usuario {
     default: 1
   })
 	activo : boolean;
-
-  // @Column('datetime', {
-  //   nullable: false,
-  //   default: Date.now()
-  // })
-  // creado_en : Date;
-
-  // @Column('datetime', {
-  //   nullable: false,
-  //   default: Date.now()
-  // })
-	// modificado_en : Date;
 
   @Column('datetime', {
     nullable: false,

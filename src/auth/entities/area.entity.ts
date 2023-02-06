@@ -1,4 +1,5 @@
 import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+
 import { Usuario } from './usuario.entity';
 
 @Entity('area')
@@ -11,11 +12,6 @@ export class Area {
     nullable: false
   })
   nombre: string;
-  
-  // @Column('datetime', {
-  //   default: Date.now()
-  // })
-  // creado_en: Date;
   
   @Column('datetime')
   modificado_en: Date;

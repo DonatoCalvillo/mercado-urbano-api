@@ -1,21 +1,17 @@
 import { Controller, Post, Body, Get } from '@nestjs/common';
-import { Req, SetMetadata, UseGuards } from '@nestjs/common/decorators';
 
 import { AuthService } from './auth.service';
+
 import { CreateUsuarioDto, LoginUsuarioDto } from './dto';
-import { Cookies } from './decorators/get-cookies.decorator';
-import { UserRoleGuard } from './guards/user-role.guard';
-import { AuthGuard } from '@nestjs/passport';
-import { GetUser } from './decorators/get-user.decorator';
-import { RowHeaders } from './decorators/raw-headers.decorator';
-import { RoleProtected, ValidRoles } from './decorators/role-protected.decorator';
-import { Auth } from './decorators/auth.decorator';
+
+import { GetUser, ValidRoles, Auth } from './decorators';
 
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('register')
+  // @Auth( ValidRoles.admin, ValidRoles.superAdmin )
   create(@Body() createUsuarioDto: CreateUsuarioDto) {
     return this.authService.create(createUsuarioDto);
   }
@@ -25,18 +21,16 @@ export class AuthController {
     return this.authService.login(loginUsuarioDto);
   }
 
+  @Post('loginAdmin')
+  loginAdmin(@Body() loginUsuarioDto: LoginUsuarioDto) {
+    return this.authService.loginAdmin(loginUsuarioDto);
+  }
+
   @Get('validateToken')
-  // @RoleProtected( ValidRoles.admin )
-  // @SetMetadata('roles', ['admin'])
-  // @UseGuards(AuthGuard(), UserRoleGuard)
-  // validateToken(@Cookies('token') token: string) {
-  @Auth( ValidRoles.admin )
+  @Auth( )
   validateToken(
-      @Req() request: Express.Request,
-      @GetUser('rol') userRol: any,
-      @RowHeaders() rowHeaders: string[]
-    ) {
-      return userRol
-  
+    @GetUser() user: any,
+  ) {
+    return this.authService.validateToken(user);
   }
 }

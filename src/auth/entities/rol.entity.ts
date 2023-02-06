@@ -1,4 +1,5 @@
 import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+
 import { Usuario } from './usuario.entity';
 
 @Entity('rol')
@@ -16,16 +17,8 @@ export class Rol {
     nullable: false
   })
   descripcion: string;
-  
-  // @Column('datetime', {
-  //   default: Date.now()
-  // })
-  // creado_en: Date;
 
   @OneToOne( ()=> Usuario)
   usuario : Usuario;
-  
-  // @Column('datetime')
-  // modificado_en: Date;
 
 }

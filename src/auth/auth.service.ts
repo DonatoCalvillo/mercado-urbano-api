@@ -14,9 +14,8 @@ import { PaginationDto } from 'src/common/dtos/pagination.dto';
 
 import { Usuario, Rol, Area } from './entities';
 
-import { IJwtPayload } from './interfaces/jwt-payload.interface';
-// import {  } from './entities/area.entity';
-import { IResponseLogin } from './interfaces/response.interface';
+import { IJwtPayload, IResponseLogin } from './interfaces';
+
 
 @Injectable()
 export class AuthService {
@@ -55,7 +54,6 @@ export class AuthService {
       
       const matricula = this.generateMatricula(secuenciaNumeric.toString(), area.nombre)
       
-      //to do, recibir y validar jwt que sea admin
       const user = this.useRepository.create({
         ...userData,
         contrasenia: bcrypt.hashSync( contrasenia, 10 ),
@@ -71,7 +69,6 @@ export class AuthService {
       const response : IResponseLogin = {
         message: "Usuario creado exitosamente.",
         user
-        // token: this.getJwtToken({ matricula: user.matricula })
       } 
 
       return response
@@ -85,16 +82,30 @@ export class AuthService {
 
     const { contrasenia, matricula } = loginUsuarioDto
 
-    const user = await this.useRepository.findOneBy({matricula})
+    const user = await this.useRepository.createQueryBuilder("usuario")
+      .select([
+        'usuario.matricula',
+        'usuario.puntos',
+        'usuario.nombre',
+        'usuario.contrasenia',
+        'usuario.apellido_paterno',
+        'usuario.apellido_materno',
+        'rol.nombre',
+      ])
+      .innerJoin("usuario.rol", "rol")
+      .where("usuario.matricula =:matricula", {matricula})
+      .andWhere("rol.nombre =:nombre", {nombre: "Usuario"})
+      .getOne()
     
     if( !user || !bcrypt.compareSync( contrasenia, user.contrasenia ) )
       throw new UnauthorizedException("Credenciales invalidas.")
 
-    const { nombre, apellido_paterno, apellido_materno, rol } = user
+    const { nombre, apellido_paterno, apellido_materno, rol, puntos } = user
     const rol_nombre = rol.nombre
 
     const final_user = {
       matricula,
+      puntos,
       nombre,
       apellido_paterno,
       apellido_materno,
@@ -109,8 +120,62 @@ export class AuthService {
 
   }
 
-  async validateToken (token = '') {
-    return token
+  async loginAdmin ( loginUsuarioDto: LoginUsuarioDto ) {
+
+    const { contrasenia, matricula } = loginUsuarioDto
+
+    const user = await this.useRepository.createQueryBuilder("usuario")
+      .select([
+        'usuario.matricula',
+        'usuario.puntos',
+        'usuario.nombre',
+        'usuario.contrasenia',
+        'usuario.apellido_paterno',
+        'usuario.apellido_materno',
+        'rol.nombre',
+      ])
+      .innerJoin("usuario.rol", "rol")
+      .where("usuario.matricula =:matricula", {matricula})
+      .andWhere("rol.nombre in (:rolUno , :rolDos)", {rolUno: "Administrador", rolDos: "SuperAdministrador"})
+      .getOne()
+    
+    if( !user || !bcrypt.compareSync( contrasenia, user.contrasenia ) )
+      throw new UnauthorizedException("Credenciales invalidas.")
+
+    const { nombre, apellido_paterno, apellido_materno, rol, puntos } = user
+    const rol_nombre = rol.nombre
+
+    const final_user = {
+      matricula,
+      puntos,
+      nombre,
+      apellido_paterno,
+      apellido_materno,
+      rol_nombre,
+    }
+
+    return {
+      menssage: "Acceso exitoso.",
+      usuario : final_user,
+      token: this.getJwtToken({ matricula: user.matricula })
+    };
+
+  }
+
+  async validateToken ( user: Usuario) {
+    const finalUser = {
+      matricula: user.matricula,
+      puntos: user.puntos,
+      nombre: user.nombre,
+      apellido_paterno: user.apellido_paterno,
+      apellido_materno: user.apellido_materno,
+      rol_nombre: user.rol.nombre
+    }
+
+    return {
+      usuario: finalUser,
+      token: this.getJwtToken({ matricula: user.matricula })
+    }
   }
 
   private getJwtToken( payload: IJwtPayload ) {
@@ -119,18 +184,19 @@ export class AuthService {
   }
 
   private handleDBErrors ( error: any ): never {
-    // if(error.originalError.info.number == 2627)
-    //   throw new BadRequestException( error.originalError.info.message )
 
     console.log( error.sqlMessage ) 
 
     throw new InternalServerErrorException( error.sqlMessage )
   }
 
-  private generateMatricula = (secuencia:string, area:string): string => {
+  private generateMatricula = (secuencia:string, _area:string): string => {
     const number = secuencia.padStart(3,'0')
+
+    const area = _area.toUpperCase()
+    if( area === "ADMINISTRADOR" )
+      return `CAR${number}-ADM`
 
     return `CAR${number}-${area[0]}`
   }
-
 }

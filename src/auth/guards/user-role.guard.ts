@@ -1,7 +1,9 @@
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { Observable } from 'rxjs';
 import { BadRequestException, ForbiddenException } from '@nestjs/common/exceptions';
+
+import { Observable } from 'rxjs';
+
 import { Usuario } from '../entities/usuario.entity';
 import { META_ROLES } from '../decorators/role-protected.decorator';
 
@@ -26,8 +28,6 @@ export class UserRoleGuard implements CanActivate {
       throw new BadRequestException('Usuario no encontrado en el token')
 
     const {nombre} = user.rol
-
-    // console.log(nombre)
 
     if(validRoles.includes(nombre))
       return true;

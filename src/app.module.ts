@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { CommonModule } from './common/common.module';
 import { UserModule } from './user/user.module';
+import { EventModule } from './event/event.module';
 
 @Module({
   imports: [ 
@@ -22,6 +23,7 @@ import { UserModule } from './user/user.module';
     AuthModule,
     CommonModule,
     UserModule,
+    EventModule,
   ],
   controllers: [],
   providers: [],

@@ -35,9 +35,5 @@ export class CreateUsuarioDto {
   @IsString()
   @MinLength(1)
   fk_area: string;
-
-  @IsString()
-  @MinLength(1)
-  fk_rol: string;
   
 }

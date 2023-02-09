@@ -68,16 +68,17 @@ CREATE TABLE zona (
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE lugares (
+CREATE TABLE lugar (
 	id VARCHAR(64) NOT NULL DEFAULT (uuid()),
-	numero SMALLINT AUTO_INCREMENT NOT NULL,
+	numero SMALLINT NOT NULL,
 	fk_area VARCHAR(255) NOT NULL,
+    fk_plaza VARCHAR(255) NOT NULL,
 
 	creado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
-	modificado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
 
 	PRIMARY KEY (id),
-    UNIQUE(numero)
+    FOREIGN KEY (fK_area) REFERENCES area(id),
+    FOREIGN KEY (fK_plaza) REFERENCES plaza(id)
 );
 
 CREATE TABLE evento (
@@ -111,14 +112,20 @@ CREATE TABLE usuario_evento (
 -- Area
 INSERT INTO area (nombre) values ('Gastronomia');
 INSERT INTO area (nombre) values ('Comercio');
+INSERT INTO area (nombre) values ('Administrador');
 
 SELECT * FROM area;
 
+INSERT INTO rol (nombre, descripcion) values ('SuperAdministrador', 'Super administrador del portal');
 INSERT INTO rol (nombre, descripcion) values ('Administrador', 'Administrador del portal');
 INSERT INTO rol (nombre, descripcion) values ('Usuario', 'Usuario del portal');
 
+
 SELECT * FROM rol;
 SELECT * FROM usuario;
+
+-- Plaza
+INSERT INTO plaza (nombre, direccion) VALUES ('Parque Independencia','Pl. Hidalgo, Centro, 86500 Heroica Cárdenas, Tab.');
 
 
 CREATE USER 'MERURBAPIUSR01'@'localhost' IDENTIFIED BY 'M~bu/UIB!0u*7yN47I=%';

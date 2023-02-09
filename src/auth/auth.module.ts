@@ -31,6 +31,11 @@ import { Usuario, Rol, Area } from './entities';
       }
     })
   ],
-  exports: [TypeOrmModule, JwtStrategy, PassportModule, JwtModule]
+  exports: [ 
+    TypeOrmModule, 
+    JwtStrategy, 
+    PassportModule, 
+    JwtModule
+  ]
 })
 export class AuthModule {}

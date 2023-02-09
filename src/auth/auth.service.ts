@@ -36,15 +36,15 @@ export class AuthService {
 
   async create(createUsuarioDto: CreateUsuarioDto) {
     try {
-      const { contrasenia, fk_rol, fk_area, ...userData } = createUsuarioDto
+      const { contrasenia, fk_area, ...userData } = createUsuarioDto
 
       const emailVerify = await this.useRepository.findOne({where: {correo: userData.correo}})
-
+      console.log(emailVerify)
       if ( emailVerify )
-        throw new BadRequestException("Correo ya registrado.")
+        return new BadRequestException("Correo ya registrado.")
 
-      const rol = await this.rolRepository.findOne({where: {nombre: fk_rol}})
-
+      const rol = await this.rolRepository.findOne({where: {nombre: 'Usuario'}})
+      console.log(rol)
       const area = await this.areaRepository.findOne({where: {nombre: fk_area}})
 
       //Armar matricula
@@ -66,15 +66,23 @@ export class AuthService {
 
       delete user.contrasenia
 
-      const response : IResponseLogin = {
+      const newUser = {
+        nombre: user.nombre,
+        apellido_paterno: user.apellido_paterno,
+        apellido_materno: user.apellido_materno,
+        matricula: user.matricula,
+        correo: user.correo,
+        telefono: user.telefono,
+        area: user.area.nombre
+      }
+
+      return {
         message: "Usuario creado exitosamente.",
-        user
+        newUser
       } 
 
-      return response
-
     } catch (error) {
-      this.handleDBErrors( error )
+      throw new InternalServerErrorException(error)
     }
   }
 
@@ -162,6 +170,8 @@ export class AuthService {
 
   }
 
+
+
   async validateToken ( user: Usuario) {
     const finalUser = {
       matricula: user.matricula,
@@ -183,11 +193,11 @@ export class AuthService {
     return token
   }
 
-  private handleDBErrors ( error: any ): never {
+  private handleDBErrors ( error: any ) {
 
     console.log( error.sqlMessage ) 
 
-    throw new InternalServerErrorException( error.sqlMessage )
+    return new InternalServerErrorException( error.sqlMessage )
   }
 
   private generateMatricula = (secuencia:string, _area:string): string => {

@@ -1,4 +1,5 @@
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Lugar } from "src/event/entities";
+import { Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 import { Usuario } from './usuario.entity';
 
@@ -18,5 +19,8 @@ export class Area {
   
   @OneToOne( ()=> Usuario)
   usuario : Usuario;
+
+  @OneToMany(() => Lugar, (lugar) => lugar.area)
+  lugar: Lugar[]
 
 }

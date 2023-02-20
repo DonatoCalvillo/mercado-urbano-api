@@ -10,13 +10,14 @@ import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 
 import { Usuario, Rol, Area } from './entities';
+import { UsuarioEvento } from '../event/entities/usuario-evento.entity';
 
 @Module({
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy],
   imports: [
     ConfigModule,
-    TypeOrmModule.forFeature([ Usuario, Rol, Area ]),
+    TypeOrmModule.forFeature([ Usuario, Rol, Area, UsuarioEvento ]),
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.registerAsync({
       imports: [ConfigModule],

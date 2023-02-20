@@ -2,6 +2,7 @@ import { BeforeInsert, BeforeUpdate, Column, Entity, JoinColumn, ManyToOne, OneT
 
 import { Rol } from './rol.entity';
 import { Area } from './area.entity';
+import { UsuarioEvento } from '../../event/entities/usuario-evento.entity';
 
 @Entity('usuario')
 export class Usuario {
@@ -82,6 +83,9 @@ export class Usuario {
     default: null
   })
 	borrado_en : Date;
+
+  @OneToMany(() => UsuarioEvento, (usuario_evento) => usuario_evento.usuario)
+  usuario_evento: UsuarioEvento[]
 
   @BeforeInsert()
   checkFieldsBeforeInsert(){

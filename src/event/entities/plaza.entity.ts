@@ -1,5 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Lugar } from './';
+import { Evento } from './evento.entity';
 
 @Entity('plaza')
 export class Plaza {
@@ -24,4 +25,7 @@ export class Plaza {
 
   @OneToMany(() => Lugar, (lugar) => lugar.plaza)
   lugar: Lugar[]
+
+  @OneToMany(() => Evento, (evento) => evento.plaza)
+  evento: Evento[]
 }

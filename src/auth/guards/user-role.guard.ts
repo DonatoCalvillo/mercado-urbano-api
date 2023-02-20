@@ -28,7 +28,6 @@ export class UserRoleGuard implements CanActivate {
       throw new BadRequestException('Usuario no encontrado en el token')
 
     const {nombre} = user.rol
-
     if(validRoles.includes(nombre))
       return true;
 

@@ -473,4 +473,62 @@ export class EventService {
  
   }
 
+  async getUserHistory(matricula:string) {
+    try {
+      if(matricula === '' || !matricula || matricula == undefined)
+        throw new BadRequestException('No contiene la matricula del usuario')
+      
+      const usuario = await this.usuarioRepository.findOne({
+        where: { matricula }
+      })
+
+      if( !usuario )
+        return {
+          status: "FAIL",
+          message: "Este usuario no existe.",
+          historyFinal: null
+        } 
+
+      const history = await this.usuarioEventoRepository.find( {
+        where : {
+          usuario : {
+            matricula 
+          },
+          inscrito : 1
+        }
+      } )
+
+      if( !history )
+        return {
+          status: "OK",
+          message: "Este usuario no cuenta con historico.",
+          historyFinal: null
+        }
+
+      const historyFinal = await Promise.all(
+        history.map(async (event) => {
+          const { puntos, dia, evento, lugar, usuario } = event
+          return {
+            puntos,
+            dia,
+            nombreEvento: `${evento.nombre} ${evento.semana}`,
+            nombrePlaza: evento.plaza.nombre,
+            numeroLugar: `${lugar.numero}${usuario.area.nombre[0]}`,
+            fechaInicio: evento.fechaInicio.toLocaleDateString(),
+            fechaFin: evento.fechaFin.toLocaleDateString(),
+          }
+        })
+      )
+
+      return {
+        status: "OK",
+        message: "Se extrajo el historico correctamente.",
+        historyFinal
+      }
+    } catch (error) {
+      return error
+    
+    }
+  }
+
 }

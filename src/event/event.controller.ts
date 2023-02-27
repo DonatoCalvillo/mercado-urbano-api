@@ -77,8 +77,12 @@ export class EventController {
   ) file : Express.Multer.File, 
   @Param('id')  id: string
     ){
-      // return "ok"
     return this.eventService.setExcelList(file, id)
   }
 
+  @Post('getEventHistory')
+  @Auth( ValidRoles.admin, ValidRoles.superAdmin )
+  getUserHistory(@Body('matricula') matricula: string) {
+    return this.eventService.getUserHistory(matricula)
+  }
 }

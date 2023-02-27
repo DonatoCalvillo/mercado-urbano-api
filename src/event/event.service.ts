@@ -3,11 +3,14 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Lugar, Plaza, Evento } from './entities';
 import { Repository } from 'typeorm';
 import { Area } from 'src/auth/entities';
-import { ForbiddenException, InternalServerErrorException } from '@nestjs/common/exceptions';
+import { ForbiddenException, InternalServerErrorException, BadRequestException } from '@nestjs/common/exceptions';
 import { CreateEventoDto } from './dto/create-evento.dto';
 import { Usuario } from '../auth/entities/usuario.entity';
 import { UsuarioEvento } from './entities/usuario-evento.entity';
 import { SetLugarDto } from './dto/set-lugar.dto';
+import { Workbook, Worksheet } from 'exceljs';
+import * as tmp from 'tmp'
+import { ExcelListDto } from './dto/update-puntos.dto';
 @Injectable()
 export class EventService {
 
@@ -94,7 +97,7 @@ export class EventService {
       finalDate.setHours(12)
 
       if( event.usuario_evento_fechaInscripcion.getTime() <= currentDate.getTime() ){
-        //&&  event.usuario_evento_fechaInscripcion.getTime() >= finalDate.getTime())
+        //&&  event.usuario_evento_fechaInscripcion.getTime() >= finalDate.getTime()){
 
         return {
           status: "OK"
@@ -152,53 +155,6 @@ export class EventService {
       }
 
       return events
-      // const events = await this.usuarioEventoRepository.createQueryBuilder("usuario_evento")
-      // .select([
-      //   'usuario_evento.inscrito',
-      //   'usuario_evento.fechaInscripcion',
-      //   'evento.nombre',
-      //   'evento.semana',
-      //   'evento.fechaInicio',
-      //   'evento.fechaFin',
-      //   'evento.hora',
-      //   'lugar.numero',
-      //   'plaza.nombre'
-      // ])
-      // .innerJoin("usuario_evento.evento", "evento")
-      // .innerJoin('usuario_evento.usuario', 'usuario')
-      // .innerJoin('usuario_evento.lugar', 'lugar')
-      // .innerJoin('evento.plaza', 'plaza')
-      // .where("evento.activo = 1")
-      // .andWhere('usuario.matricula =:matricula', {matricula: user.matricula})
-      // .groupBy("evento.nombre")
-      // .addGroupBy("evento.semana")
-      // .addGroupBy("evento.fechaInicio")
-      // .addGroupBy("evento.fechaFin")
-      // .addGroupBy("evento.hora")
-      // .addGroupBy("usuario_evento.inscrito")
-      // .addGroupBy("usuario_evento.fechaInscripcion")
-      // .addGroupBy("plaza.nombre")
-      // .addGroupBy("lugar.numero")
-      // .getRawOne();
-
-      // const { usuario_evento_fechaInscripcion } = events
-
-      // const fechaInscripcion:Date = usuario_evento_fechaInscripcion
-      // const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
-      // const fechaInscripcionParse = fechaInscripcion.toLocaleDateString('es-MX', {
-      //   weekday: 'long',
-      //   year: 'numeric',
-      //   month: 'long',
-      //   day: 'numeric',
-      //   hour: 'numeric',
-      //   minute: 'numeric'
-      // })
-
-      // return {
-      //   ...events,
-      //   usuario_evento_fechaInscripcion: fechaInscripcionParse
-      // }
 
     } catch (error) {
       throw new InternalServerErrorException(error)
@@ -331,7 +287,6 @@ export class EventService {
     }
   }
 
-
   getWeek(eventDate: Date) {
 
     const oneJan = new Date(eventDate.getFullYear(),0,1)
@@ -353,6 +308,169 @@ export class EventService {
   getNameOfDayOfWeek(fecha: Date){
     let dias = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
     return dias[fecha.getDay()]
+  }
+
+  async getExcelList(excelListDto: ExcelListDto) {
+    try {
+      const users_events = await this.usuarioEventoRepository.find({
+        where:{ 
+          evento: {
+            id: excelListDto.fk_evento
+          },
+          inscrito: 1 
+        },
+        order: {
+          usuario:{
+            matricula: "ASC",
+            area :{
+              nombre: "ASC"
+            }
+          }
+        }
+      })
+
+      const list = users_events.map((user_event) => {
+        return {
+          Matricula: user_event.usuario.matricula,
+          Area: user_event.usuario.area.nombre,
+          Asiento : `${user_event.lugar.numero}${user_event.usuario.area.nombre[0]}`,
+          Nombre: user_event.usuario.nombre,
+          Apellido_paterno: user_event.usuario.apellido_paterno,
+          Apellido_materno: user_event.usuario.apellido_materno,
+          Fecha_evento: user_event.dia,
+          Puntos: user_event.puntos > 0 ? user_event.puntos : null,
+        }
+      })
+
+      let rows = []
+
+      list.forEach( doc => {
+        rows.push(Object.values(doc))
+      })
+
+      let book = new Workbook()
+
+      let sheet = book.addWorksheet(`CG`)
+
+      rows.unshift(Object.keys(list[0]))
+
+      sheet.addRows(rows)
+
+      this.styleSheet(sheet)
+
+      let File = await new Promise((resolve, reject) => {
+        tmp.file({ discardDescriptor: true, prefix: `CorredorGastronomico`, postfix: `.xlsx`, mode: parseInt('0600', 8) }, async (err, file) =>{
+          if(err)
+            throw new BadRequestException(err)
+
+          book.xlsx.writeFile(file).then(_ => {
+            resolve(file)
+          }).catch(error => {
+            throw new BadRequestException(error)
+          })
+        })
+      })
+
+      return File
+    } catch (error) {
+      
+    }
+  }
+
+  async getActiveEvents () {
+    try {
+      const events = await this.eventoRepository.find({where: { activo: 1}})
+
+      const eventList = events.map((event) => {
+        return {
+          id: event.id,
+          nombre: `${event.nombre} ${event.semana} | ${event.fechaInicio.toLocaleDateString('en-GB')} - ${event.fechaFin.toLocaleDateString('en-GB')}`
+        }
+      })
+      return eventList
+    } catch (error) {
+      
+    }
+  }
+
+  async setExcelList(file : Express.Multer.File, excelListDto: string){
+    try {
+
+      let workBook = new Workbook()
+      await workBook.xlsx.load(file.buffer)
+
+      // data
+      let excelTitles = [];
+      let excelData = [];
+
+      // excel to json converter (only the first sheet)
+      workBook.worksheets[0].eachRow((row, rowNumber) => {
+          // rowNumber 0 is empty
+          if (rowNumber > 0) {
+              // get values from row
+              let  rowValues 
+              rowValues = row.values ;
+              // remove first element (extra without reason)
+              rowValues.shift();
+              // titles row
+              if (rowNumber === 1) excelTitles=rowValues;
+              // table data
+              else {
+                  // create object with the titles and the row values (if any)
+                  let rowObject = {}
+                  for (let i = 0; i < excelTitles.length; i++) {
+                      let title = excelTitles[i];
+                      let value = rowValues[i] ? rowValues[i] : '';
+                      rowObject[title] = value;
+                  }
+                  excelData.push(rowObject);
+              }
+          }
+      })
+      
+      const eventos_usuarios = await Promise.all( 
+        excelData.map(async (data) => {
+          const usuario_evento = await this.usuarioEventoRepository.findOne({
+            where:{
+              usuario:{
+                matricula: data.Matricula,
+                area: {
+                  nombre: data.Area
+                }
+              },
+              evento: {
+                id : excelListDto
+              },
+              dia : data.Fecha_evento
+            }
+          })
+          usuario_evento.puntos = Number(data.Puntos) > 1000 ? Number(data.Puntos) : usuario_evento.puntos
+          usuario_evento.modificado_en = new Date()
+
+          return usuario_evento
+        })
+      )
+
+      await this.usuarioEventoRepository.save(eventos_usuarios)
+
+      return eventos_usuarios
+    } catch (error) {
+      
+    }
+  }
+
+  private styleSheet( sheet: Worksheet ) {
+
+    sheet.getRow(1).fill = {
+      type: 'pattern',
+      pattern:'solid',
+      fgColor:{argb:'9D2449'},
+    }
+
+    sheet.getRow(1).font = { bold:true, color: {argb: 'FFFFFF'}}
+
+    sheet.autoFilter = 'A1:H1';
+ 
   }
 
 }

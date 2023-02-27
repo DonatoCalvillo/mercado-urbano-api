@@ -205,7 +205,7 @@ export class AuthService {
 
     const area = _area.toUpperCase()
     if( area === "ADMINISTRADOR" )
-      return `CAR${number}-ADM`
+      return `CAR${number}-ADMIN`
 
     return `CAR${number}-${area[0]}`
   }

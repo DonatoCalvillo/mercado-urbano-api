@@ -31,6 +31,11 @@ export class UsuarioEvento {
   })
   fechaInscripcion: Date;
 
+  @Column('datetime', {
+    nullable: true
+  })
+  modificado_en: Date;
+
   @ManyToOne(() => Usuario, (usuario) => usuario.usuario_evento, {cascade: true, eager: true})
   @JoinColumn({
     name: "fk_usuario", referencedColumnName: "id"

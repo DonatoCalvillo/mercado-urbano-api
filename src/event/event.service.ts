@@ -96,8 +96,8 @@ export class EventService {
       finalDate.setDate(event.usuario_evento_fechaInscripcion.getDate())
       finalDate.setHours(12)
 
-      if( event.usuario_evento_fechaInscripcion.getTime() <= currentDate.getTime() ){
-        //&&  event.usuario_evento_fechaInscripcion.getTime() >= finalDate.getTime()){
+      if( event.usuario_evento_fechaInscripcion.getTime() <= currentDate.getTime() // ){
+        &&  event.usuario_evento_fechaInscripcion.getTime() >= finalDate.getTime()){
 
         return {
           status: "OK"
@@ -205,12 +205,16 @@ export class EventService {
 
           const _fechaInscripcion = new Date(fechaInscripcion)
 
-          if( i >= 0 && i <= 10)
-            _fechaInscripcion.setHours(2)
-          else if( i > 10 && i <= 20 )
-            _fechaInscripcion.setHours(3)
+          if( i >= 0 && i <= 20)
+            _fechaInscripcion.setHours(6)
+          else if( i > 10 && i <= 40 )
+            _fechaInscripcion.setHours(7)
+          else if( i > 40 && i <= 60 )
+            _fechaInscripcion.setHours(8)
+          else if( i > 60 && i <= 80 )
+            _fechaInscripcion.setHours(9)
           else
-            _fechaInscripcion.setHours(4)
+            _fechaInscripcion.setHours(10)
 
           _fechaInscripcion.setDate(_fechaInscripcionTmp.getDate())
 
@@ -453,9 +457,39 @@ export class EventService {
 
       await this.usuarioEventoRepository.save(eventos_usuarios)
 
-      return eventos_usuarios
+      const allUsers = await this.usuarioRepository.find({ 
+        where : { rol : { nombre: "Usuario" }, activo : true }
+      })
+      const usersPoints = await Promise.all(
+        allUsers.map(async (user) => {
+          const userPoints = await this.usuarioEventoRepository.createQueryBuilder("usuario_evento")
+          .select(['usuario_evento.puntos'])
+          .innerJoin("usuario_evento.usuario", "usuario")
+          .innerJoin("usuario.rol", "rol")
+          .where('usuario.matricula =:matricula', {matricula : user.matricula})
+          .andWhere('usuario_evento.inscrito = 1')
+          .getMany()
+          
+          let sumaPuntos = 0;
+          userPoints.map(({puntos}) => {
+            sumaPuntos += puntos
+          })
+
+          const promedio = sumaPuntos / userPoints.length
+
+          if(promedio > 1000){
+            user.puntos = promedio
+          }
+
+          return user
+        })
+      )
+
+      await this.usuarioRepository.save(usersPoints)
+
+      return usersPoints
     } catch (error) {
-      
+      console.log(error)
     }
   }
 

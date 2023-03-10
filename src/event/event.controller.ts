@@ -51,7 +51,7 @@ export class EventController {
 
   @Post('/getExcelList')
   @Header('Content-Type', 'text/xlsx')
-  @Auth( ValidRoles.admin )
+  @Auth( ValidRoles.admin, ValidRoles.superAdmin )
   async getExcelList (@Res() res: Response, @Body() excelListDto: ExcelListDto) {
     let result= await this.eventService.getExcelList(excelListDto)
     res.download(`${result}`)
@@ -65,7 +65,7 @@ export class EventController {
 
   @Post('/setExcelList')
   @UseInterceptors(FileInterceptor('file'))
-  @Auth( ValidRoles.admin )
+  @Auth( ValidRoles.admin, ValidRoles.superAdmin )
   setExcelList(@UploadedFile(
     new ParseFilePipe({
       validators: [

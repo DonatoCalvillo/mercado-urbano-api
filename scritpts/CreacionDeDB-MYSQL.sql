@@ -99,7 +99,7 @@ CREATE TABLE evento (
     FOREIGN KEY (fk_plaza) REFERENCES plaza(id)
 );
 
-INSERT INTO Evento (nombre, semana, fechaInicio, fechaFin, fk_plaza) values ('Corredor Gastronómico', 'Semana 6', '2023-02-10','2023-02-11', 'e7f146b6-a8bb-11ed-96ab-4bda625ca93a');
+-- INSERT INTO Evento (nombre, semana, fechaInicio, fechaFin, fk_plaza) values ('Corredor Gastronómico', 'Semana 6', '2023-02-10','2023-02-11', 'e7f146b6-a8bb-11ed-96ab-4bda625ca93a');
 
 CREATE TABLE usuario_evento (
 	id VARCHAR(64) NOT NULL DEFAULT (uuid()),
@@ -140,11 +140,11 @@ SELECT * FROM usuario;
 INSERT INTO plaza (nombre, direccion) VALUES ('Parque Independencia','Pl. Hidalgo, Centro, 86500 Heroica Cárdenas, Tab.');
 
 -- Evento
-INSERT INTO Evento (nombre, semana, dia, fecha, fk_plaza) values ('Corredor Gastronómico', 'Semana 6', 'Viernes', '2023-02-10', 'e7f146b6-a8bb-11ed-96ab-4bda625ca93a');
-INSERT INTO Evento (nombre, semana, dia, fecha, fk_plaza) values ('Corredor Gastronómico', 'Semana 6', 'Sabado', '2023-02-11','e7f146b6-a8bb-11ed-96ab-4bda625ca93a');
+-- INSERT INTO Evento (nombre, semana, dia, fecha, fk_plaza) values ('Corredor Gastronómico', 'Semana 6', 'Viernes', '2023-02-10', 'e7f146b6-a8bb-11ed-96ab-4bda625ca93a');
+-- INSERT INTO Evento (nombre, semana, dia, fecha, fk_plaza) values ('Corredor Gastronómico', 'Semana 6', 'Sabado', '2023-02-11','e7f146b6-a8bb-11ed-96ab-4bda625ca93a');
 
-INSERT INTO Evento (nombre, semana, dia, fecha, fk_plaza) values ('Corredor Gastronómico', 'Semana 7', 'Viernes', '2023-02-17', 'e7f146b6-a8bb-11ed-96ab-4bda625ca93a');
-INSERT INTO Evento (nombre, semana, dia, fecha, fk_plaza) values ('Corredor Gastronómico', 'Semana 7', 'Sabado', '2023-02-18','e7f146b6-a8bb-11ed-96ab-4bda625ca93a');
+-- INSERT INTO Evento (nombre, semana, dia, fecha, fk_plaza) values ('Corredor Gastronómico', 'Semana 7', 'Viernes', '2023-02-17', 'e7f146b6-a8bb-11ed-96ab-4bda625ca93a');
+-- INSERT INTO Evento (nombre, semana, dia, fecha, fk_plaza) values ('Corredor Gastronómico', 'Semana 7', 'Sabado', '2023-02-18','e7f146b6-a8bb-11ed-96ab-4bda625ca93a');
 
 
 CREATE USER 'MERURBAPIUSR01'@'localhost' IDENTIFIED BY 'M~bu/UIB!0u*7yN47I=%';

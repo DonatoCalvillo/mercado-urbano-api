@@ -1,8 +1,8 @@
 {
   "name": "evento-parque-gob",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Esta es el API REST hecha en NEST JS para la aplicación del mercado urbano, proyecto gubernamental que consiste en un reservador de espacios para los eventos semanales en Cárdenas, Tabasco.",
+  "author": "Edgar Donato Calvillo Lumbreras",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {

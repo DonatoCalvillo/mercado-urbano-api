@@ -4,6 +4,7 @@ import { BadRequestException } from '@nestjs/common/exceptions';
 import { InjectRepository } from '@nestjs/typeorm';
 import { JwtService } from '@nestjs/jwt';
 import { UnauthorizedException } from '@nestjs/common';
+import { generate } from 'generate-password'
 
 import * as bcrypt from 'bcrypt';
 
@@ -20,7 +21,6 @@ import { IJwtPayload, IResponseLogin } from './interfaces';
 @Injectable()
 export class AuthService {
 
-
   constructor(
     @InjectRepository(Usuario)
     private readonly useRepository: Repository<Usuario>,
@@ -36,15 +36,16 @@ export class AuthService {
 
   async create(createUsuarioDto: CreateUsuarioDto) {
     try {
-      const { contrasenia, fk_area, ...userData } = createUsuarioDto
+      const { contrasenia = generate({ length:10, numbers:true, uppercase: true, lowercase: true, symbols: true }),
+         fk_area, ...userData } = createUsuarioDto
 
       const emailVerify = await this.useRepository.findOne({where: {correo: userData.correo}})
-      console.log(emailVerify)
+
       if ( emailVerify )
         return new BadRequestException("Correo ya registrado.")
 
       const rol = await this.rolRepository.findOne({where: {nombre: 'Usuario'}})
-      console.log(rol)
+
       const area = await this.areaRepository.findOne({where: {nombre: fk_area}})
 
       //Armar matricula
@@ -64,13 +65,14 @@ export class AuthService {
 
       await this.useRepository.save( user )
 
-      delete user.contrasenia
+      //delete user.contrasenia
 
       const newUser = {
         nombre: user.nombre,
         apellido_paterno: user.apellido_paterno,
         apellido_materno: user.apellido_materno,
         matricula: user.matricula,
+        contrasenia,
         correo: user.correo,
         telefono: user.telefono,
         area: user.area.nombre
@@ -99,8 +101,10 @@ export class AuthService {
         'usuario.apellido_paterno',
         'usuario.apellido_materno',
         'rol.nombre',
+        'area.nombre'
       ])
       .innerJoin("usuario.rol", "rol")
+      .innerJoin("usuario.area", "area")
       .where("usuario.matricula =:matricula", {matricula})
       .andWhere("rol.nombre =:nombre", {nombre: "Usuario"})
       .getOne()
@@ -108,7 +112,7 @@ export class AuthService {
     if( !user || !bcrypt.compareSync( contrasenia, user.contrasenia ) )
       throw new UnauthorizedException("Credenciales invalidas.")
 
-    const { nombre, apellido_paterno, apellido_materno, rol, puntos } = user
+    const { area, nombre, apellido_paterno, apellido_materno, rol, puntos } = user
     const rol_nombre = rol.nombre
 
     const final_user = {
@@ -118,6 +122,7 @@ export class AuthService {
       apellido_paterno,
       apellido_materno,
       rol_nombre,
+      area: area.nombre
     }
 
     return {
@@ -179,7 +184,8 @@ export class AuthService {
       nombre: user.nombre,
       apellido_paterno: user.apellido_paterno,
       apellido_materno: user.apellido_materno,
-      rol_nombre: user.rol.nombre
+      rol_nombre: user.rol.nombre,
+      area: user.area.nombre
     }
 
     return {

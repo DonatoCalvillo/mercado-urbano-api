@@ -1,4 +1,4 @@
-import { IsString } from "class-validator";
+import { IsOptional, IsString } from "class-validator";
 import { IsEmail, IsPhoneNumber, Matches, MaxLength, MinLength } from "class-validator";
 
 export class CreateUsuarioDto {
@@ -15,6 +15,7 @@ export class CreateUsuarioDto {
   @MinLength(1, { message: "El apellido materno debe tener al menos un caracter. "})
   apellido_materno: string;
   
+  @IsOptional()
   @IsString({ message: "La contraseña debe ser una cadena de caracteres." })
   @MinLength(6, { message: "La contraseña debe ser de al menos 6 caracteres." })
   @MaxLength(50, { message: "La contraseña debe ser de maximo 50 caracteres." })

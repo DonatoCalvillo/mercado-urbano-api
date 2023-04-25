@@ -5,9 +5,9 @@ export const META_ROLES = 'roles';
 export enum ValidRoles {
   admin = 'Administrador',
   superAdmin = 'SuperAdministrador',
-  user = 'Usuario'
+  user = 'Usuario',
 }
 
-export const RoleProtected = (...args: ValidRoles[]) =>{
+export const RoleProtected = (...args: ValidRoles[]) => {
   return SetMetadata(META_ROLES, args);
-}
+};

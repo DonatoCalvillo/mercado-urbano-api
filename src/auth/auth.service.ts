@@ -1,9 +1,10 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { InternalServerErrorException } from '@nestjs/common/exceptions';
 import { BadRequestException } from '@nestjs/common/exceptions';
 import { InjectRepository } from '@nestjs/typeorm';
 import { JwtService } from '@nestjs/jwt';
 import { UnauthorizedException } from '@nestjs/common';
+
+import { Response } from 'express';
 
 import { generate } from 'generate-password';
 
@@ -34,8 +35,9 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async create(createUsuarioDto: CreateUsuarioDto) {
+  async create(createUsuarioDto: CreateUsuarioDto, res: Response) {
     logStandar('CREANDO USUARIO', '-', ValidLogTypes.log);
+    let response: IResponse;
 
     try {
       const {
@@ -56,21 +58,47 @@ export class AuthService {
         where: { correo: userData.correo },
       });
 
-      if (emailVerify) throw new BadRequestException(`Correo ya registrado.`);
+      if (emailVerify) {
+        response = {
+          success: false,
+          message: `Correo ya registrado.`,
+          data: {},
+          error_code: 404,
+        };
+
+        return res.status(404).json(response);
+      }
 
       Logger.log(`Verificando rol: ${fk_rol}`);
       const rol = await this.rolRepository.findOne({
         where: { nombre: fk_rol },
       });
 
-      if (!rol) throw new BadRequestException(`Rol inexistente: Usuario`);
+      if (!rol) {
+        response = {
+          success: false,
+          message: `Rol inexistente: ${fk_rol}`,
+          data: {},
+          error_code: 404,
+        };
+
+        return res.status(404).json(response);
+      }
 
       const area = await this.areaRepository.findOne({
         where: { nombre: fk_area },
       });
 
-      if (!area)
-        throw new BadRequestException(`Area inexistente id: ${fk_area}`);
+      if (!area) {
+        response = {
+          success: false,
+          message: `Area inexistente id: ${fk_area}`,
+          data: {},
+          error_code: 404,
+        };
+
+        return res.status(404).json(response);
+      }
 
       Logger.log('Generando matricula nueva...');
       const secuencia = await this.useRepository.query(
@@ -110,21 +138,24 @@ export class AuthService {
 
       Logger.log(`Usuario creado exitosamente. ===> ${matricula}`);
 
-      const response: IResponse = {
-        status: 'OK',
+      response = {
+        success: true,
         message: 'Usuario creado exitosamente.',
-        data: newUser,
+        data: {
+          user: newUser,
+        },
       };
 
       return response;
     } catch (error) {
       const response: IResponse = {
-        status: 'FAIL',
-        message: error.message,
-        data: null,
+        success: false,
+        message: 'Algo salio mal, favor de comunicarse con el administrador.',
+        data: {},
+        error_code: 500,
       };
       Logger.error(error);
-      return response;
+      return res.status(500).json(response);
     } finally {
       logStandar();
     }

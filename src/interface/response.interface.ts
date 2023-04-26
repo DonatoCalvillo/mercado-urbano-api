@@ -1,6 +1,7 @@
 export interface IResponse {
-  status: string;
+  success: true | false;
   message: string;
   data: any;
+  error_code?: number;
   token?: string;
 }

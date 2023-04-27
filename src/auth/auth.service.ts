@@ -1,8 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { BadRequestException } from '@nestjs/common/exceptions';
 import { InjectRepository } from '@nestjs/typeorm';
 import { JwtService } from '@nestjs/jwt';
-import { UnauthorizedException } from '@nestjs/common';
 
 import { Response } from 'express';
 
@@ -161,8 +159,10 @@ export class AuthService {
     }
   }
 
-  async login(loginUsuarioDto: LoginUsuarioDto) {
+  async login(loginUsuarioDto: LoginUsuarioDto, res: Response) {
     logStandar('LOGIN', '-', ValidLogTypes.log);
+
+    let response: IResponse;
 
     const { contrasenia, matricula } = loginUsuarioDto;
 
@@ -188,7 +188,14 @@ export class AuthService {
         .getOne();
 
       if (!user || !bcrypt.compareSync(contrasenia, user.contrasenia)) {
-        throw new UnauthorizedException(`Credenciales invalidas.`);
+        response = {
+          success: false,
+          message: `Credenciales invalidas.`,
+          data: {},
+          error_code: 401,
+        };
+
+        return res.status(401).json(response);
       }
 
       const { area, nombre, apellido_paterno, apellido_materno, rol, puntos } =
@@ -208,29 +215,32 @@ export class AuthService {
 
       Logger.log(`Acceso verificado correctamente. ===> ${matricula}`);
 
-      const response: IResponse = {
-        status: 'OK',
+      response = {
+        success: true,
         message: 'Acceso de usuario exitoso.',
-        data: final_user,
+        data: { user: final_user },
         token: this.getJwtToken({ matricula: user.matricula }),
       };
 
-      return response;
+      return res.status(200).json(response);
     } catch (error) {
-      Logger.error(`Internal server error: ${error}`);
       const response: IResponse = {
-        status: 'FAIL',
-        message: error.message,
-        data: null,
+        success: false,
+        message: 'Algo salio mal, favor de comunicarse con el administrador.',
+        data: {},
+        error_code: 500,
       };
-      return response;
+      Logger.error(error);
+      return res.status(500).json(response);
     } finally {
       logStandar();
     }
   }
 
-  async loginAdmin(loginUsuarioDto: LoginUsuarioDto) {
+  async loginAdmin(loginUsuarioDto: LoginUsuarioDto, res: Response) {
     logStandar('ADMIN LOGIN', '-', ValidLogTypes.log);
+
+    let response: IResponse;
 
     const { contrasenia, matricula } = loginUsuarioDto;
     Logger.log(`Verificando administrador. ===> ${matricula}`);
@@ -255,8 +265,16 @@ export class AuthService {
         })
         .getOne();
 
-      if (!user || !bcrypt.compareSync(contrasenia, user.contrasenia))
-        throw new UnauthorizedException('Credenciales invalidas.');
+      if (!user || !bcrypt.compareSync(contrasenia, user.contrasenia)) {
+        response = {
+          success: false,
+          message: `Credenciales invalidas.`,
+          data: {},
+          error_code: 401,
+        };
+
+        return res.status(401).json(response);
+      }
 
       const { nombre, apellido_paterno, apellido_materno, rol, puntos } = user;
       const rol_nombre = rol.nombre;
@@ -274,22 +292,23 @@ export class AuthService {
         `Acceso administrador verificado correctamente. ===> ${matricula}`,
       );
 
-      const response: IResponse = {
-        status: 'OK',
+      response = {
+        success: true,
         message: 'Acceso de administrador exitoso.',
-        data: final_user,
+        data: { user: final_user },
         token: this.getJwtToken({ matricula: user.matricula }),
       };
 
-      return response;
+      return res.status(200).json(response);
     } catch (error) {
-      Logger.error(`Internal server error: ${error}`);
       const response: IResponse = {
-        status: 'FAIL',
-        message: error.message,
-        data: null,
+        success: false,
+        message: 'Algo salio mal, favor de comunicarse con el administrador.',
+        data: {},
+        error_code: 500,
       };
-      return response;
+      Logger.error(error);
+      return res.status(500).json(response);
     } finally {
       logStandar();
     }

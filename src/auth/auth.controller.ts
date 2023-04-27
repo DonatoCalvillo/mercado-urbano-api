@@ -1,10 +1,12 @@
-import { Controller, Post, Body, Get } from '@nestjs/common';
+import { Controller, Post, Body, Get, Res } from '@nestjs/common';
+
+import { Response } from 'express';
 
 import { AuthService } from './auth.service';
 
 import { CreateUsuarioDto, LoginUsuarioDto } from './dto';
 
-import { GetUser, ValidRoles, Auth } from './decorators';
+import { GetUser, Auth } from './decorators';
 
 @Controller('auth')
 export class AuthController {
@@ -12,18 +14,18 @@ export class AuthController {
 
   @Post('register')
   // @Auth(ValidRoles.admin, ValidRoles.superAdmin)
-  create(@Body() createUsuarioDto: CreateUsuarioDto) {
-    return this.authService.create(createUsuarioDto);
+  create(@Body() createUsuarioDto: CreateUsuarioDto, @Res() res: Response) {
+    return this.authService.create(createUsuarioDto, res);
   }
 
   @Post('login')
-  loginUser(@Body() loginUsuarioDto: LoginUsuarioDto) {
-    return this.authService.login(loginUsuarioDto);
+  loginUser(@Body() loginUsuarioDto: LoginUsuarioDto, @Res() res: Response) {
+    return this.authService.login(loginUsuarioDto, res);
   }
 
   @Post('loginAdmin')
-  loginAdmin(@Body() loginUsuarioDto: LoginUsuarioDto) {
-    return this.authService.loginAdmin(loginUsuarioDto);
+  loginAdmin(@Body() loginUsuarioDto: LoginUsuarioDto, @Res() res: Response) {
+    return this.authService.loginAdmin(loginUsuarioDto, res);
   }
 
   @Get('validateToken')

@@ -164,7 +164,7 @@ export class EventService {
         plaza_nombre: pre_events.evento.plaza.nombre,
       };
 
-      const response: IResponse = {
+      const response = {
         status: 'OK',
         message: 'Esta inscrito',
         data: events,
@@ -173,7 +173,7 @@ export class EventService {
       return response;
     } catch (error) {
       Logger.error(`Internal server error: ${error}`);
-      const response: IResponse = {
+      const response = {
         status: 'FAIL',
         message: error.message,
         data: null,
@@ -308,7 +308,7 @@ export class EventService {
       Logger.log(`Guardando inscripciones en base de datos.`);
       await this.usuarioEventoRepository.save(usuarios_eventos);
 
-      const response: IResponse = {
+      const response = {
         status: 'OK',
         message:
           'Evento creado con exito | Inscripciones registradas con exito.',
@@ -316,7 +316,7 @@ export class EventService {
       };
       return response;
     } catch (error) {
-      const response: IResponse = {
+      const response = {
         status: 'FAIL',
         message: error.message,
         data: null,

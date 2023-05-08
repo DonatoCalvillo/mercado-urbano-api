@@ -1,12 +1,27 @@
-import { Controller, Post, Body, Get, Res } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Get,
+  Res,
+  Put,
+  UseInterceptors,
+  UploadedFile,
+  ParseFilePipe,
+  MaxFileSizeValidator,
+  FileTypeValidator,
+  Param,
+} from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 import { Response } from 'express';
 
 import { AuthService } from './auth.service';
 
-import { CreateUsuarioDto, LoginUsuarioDto } from './dto';
+import { ChangePasswordDto, CreateUsuarioDto, LoginUsuarioDto } from './dto';
 
-import { GetUser, Auth } from './decorators';
+import { GetUser, Auth, ValidRoles } from './decorators';
+import { Usuario } from './entities';
 
 @Controller('auth')
 export class AuthController {
@@ -32,5 +47,35 @@ export class AuthController {
   @Auth()
   validateToken(@GetUser() user: any) {
     return this.authService.validateToken(user);
+  }
+
+  @Put('changePassword')
+  @Auth()
+  changePassword(
+    @GetUser() user: Usuario,
+    @Res() res: Response,
+    @Body() changePasswordDto: ChangePasswordDto,
+  ) {
+    return this.authService.changePassword(user, res, changePasswordDto);
+  }
+
+  @Post('/masiveRegister')
+  @UseInterceptors(FileInterceptor('file'))
+  @Auth(ValidRoles.admin, ValidRoles.superAdmin)
+  masiveRegister(
+    @UploadedFile(
+      new ParseFilePipe({
+        validators: [
+          new MaxFileSizeValidator({ maxSize: 100 * 100 * 4 }),
+          new FileTypeValidator({
+            fileType:
+              'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+          }),
+        ],
+      }),
+    )
+    file: Express.Multer.File,
+  ) {
+    return this.authService.masiveRegister(file);
   }
 }

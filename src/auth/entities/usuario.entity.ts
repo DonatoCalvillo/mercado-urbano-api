@@ -1,4 +1,14 @@
-import { BeforeInsert, BeforeUpdate, Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import {
+  BeforeInsert,
+  BeforeUpdate,
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  OneToMany,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 import { Rol } from './rol.entity';
 import { Area } from './area.entity';
@@ -6,94 +16,88 @@ import { UsuarioEvento } from '../../event/entities/usuario-evento.entity';
 
 @Entity('usuario')
 export class Usuario {
-
   @PrimaryGeneratedColumn('uuid')
-  id : string;
+  id: string;
 
   @Column('varchar', {
-    nullable: false
+    nullable: false,
   })
-	nombre : string;
+  nombre: string;
 
   @Column('varchar', {
-    nullable: false
+    nullable: false,
   })
-	apellido_paterno : string;
-  
-  @Column('varchar', {
-    nullable: false
-  })
-	apellido_materno : string;
+  apellido_paterno: string;
 
   @Column('varchar', {
-    unique: true,
-    nullable: false
+    nullable: false,
   })
-	matricula : string;
-
-  @Column('varchar', {
-    nullable: false
-  })
-	contrasenia : string;
-
-  @Column('varchar', {
-    nullable: false
-  })
-	puntos : number;
+  apellido_materno: string;
 
   @Column('varchar', {
     unique: true,
-    nullable: false
+    nullable: false,
   })
-	correo : string;
+  matricula: string;
+
+  @Column('varchar', {
+    nullable: false,
+  })
+  contrasenia: string;
+
+  @Column('varchar', {
+    nullable: false,
+  })
+  puntos: number;
 
   @Column('varchar', {
     unique: true,
-    nullable: false
+    nullable: false,
   })
-	telefono : string;
+  correo: string;
 
-  @OneToOne(
-    () => Area,
-    {cascade: true, eager: true}
-  )
+  @Column('varchar', {
+    unique: true,
+    nullable: false,
+  })
+  telefono: string;
 
+  @OneToOne(() => Area, { cascade: true, eager: true })
   @JoinColumn({
-    name: "fk_area", referencedColumnName: "id"
+    name: 'fk_area',
+    referencedColumnName: 'id',
   })
-  area : Area;
+  area: Area;
 
-  @OneToOne(
-    () => Rol,
-    {cascade: true, eager: true}
-  )
+  @OneToOne(() => Rol, { cascade: true, eager: true })
   @JoinColumn({
-    name: "fk_rol", referencedColumnName: "id"
+    name: 'fk_rol',
+    referencedColumnName: 'id',
   })
-  rol : Rol;
+  rol: Rol;
 
   @Column('bool', {
     nullable: false,
-    default: 1
+    default: 1,
   })
-	activo : boolean;
+  activo: boolean;
 
   @Column('datetime', {
     nullable: false,
-    default: null
+    default: null,
   })
-	borrado_en : Date;
+  borrado_en: Date;
 
   @OneToMany(() => UsuarioEvento, (usuario_evento) => usuario_evento.usuario)
-  usuario_evento: UsuarioEvento[]
+  usuario_evento: UsuarioEvento[];
 
   @BeforeInsert()
-  checkFieldsBeforeInsert(){
-    this.correo = this.correo.toLowerCase().trim()
+  checkFieldsBeforeInsert() {
+    if (this.correo) this.correo = this.correo.toLowerCase().trim();
   }
 
   @BeforeUpdate()
-  checkFieldsBeforeUpdate(){
-    this.correo = this.correo.toLowerCase().trim()
+  checkFieldsBeforeUpdate() {
+    if (this.correo) this.correo = this.correo.toLowerCase().trim();
   }
 }

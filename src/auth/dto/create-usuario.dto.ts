@@ -38,6 +38,7 @@ export class CreateUsuarioDto {
   })
   contrasenia: string;
 
+  @IsOptional()
   @IsString({ message: 'El correo debe ser una cadena de caracteres.' })
   @IsEmail()
   correo: string;

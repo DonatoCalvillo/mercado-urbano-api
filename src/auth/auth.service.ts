@@ -53,20 +53,22 @@ export class AuthService {
         ...userData
       } = createUsuarioDto;
 
-      Logger.log(`Verificando correo: ${userData.correo}`);
-      const emailVerify = await this.useRepository.findOne({
-        where: { correo: userData.correo },
-      });
+      if (userData.correo != undefined) {
+        Logger.log(`Verificando correo: ${userData.correo}`);
+        const emailVerify = await this.useRepository.findOne({
+          where: { correo: userData.correo },
+        });
 
-      if (emailVerify) {
-        response = {
-          success: false,
-          message: `Correo ya registrado.`,
-          data: {},
-          error_code: 404,
-        };
+        if (emailVerify) {
+          response = {
+            success: false,
+            message: `Correo ya registrado.`,
+            data: {},
+            error_code: 404,
+          };
 
-        return res.status(404).json(response);
+          return res.status(404).json(response);
+        }
       }
 
       Logger.log(`Verificando rol: ${fk_rol}`);

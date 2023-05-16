@@ -1,10 +1,10 @@
 {
-  "version": 1,
+  "version": 2,
   "env": {
     "DB_HOST": "@db_host",
     "DB_PORT": "@db_port",
     "DB_NAME": "@bd_name",
-    "DB_USERNAME": "@db_name",
+    "DB_USERNAME": "@db_username",
     "DB_PASSWORD": "@db_password",
     "PORT": "@port",
     "JWT_SECRET": "@jwt_secret"

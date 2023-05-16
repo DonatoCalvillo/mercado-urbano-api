@@ -5,7 +5,8 @@ import { AppModule } from './app.module';
 import { logStandar } from './helper/logStandar';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, { cors: false });
+  const app = await NestFactory.create(AppModule, { cors: true });
+  app.enableCors();
 
   app.setGlobalPrefix('api');
 

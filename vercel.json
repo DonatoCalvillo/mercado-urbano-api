@@ -1,13 +1,13 @@
 {
   "version": 2,
   "env": {
-    "DB_HOST": "@db_host",
-    "DB_PORT": "@db_port",
-    "DB_NAME": "@bd_name",
-    "DB_USERNAME": "@db_username",
-    "DB_PASSWORD": "@db_password",
-    "PORT": "@port",
-    "JWT_SECRET": "@jwt_secret"
+    "DB_HOST": "@DB_HOST",
+    "DB_PORT": "@DB_PORT",
+    "DB_NAME": "@DB_NAME",
+    "DB_USERNAME": "@DB_USERNAME",
+    "DB_PASSWORD": "@DB_PASSWORD",
+    "PORT": "@PORT",
+    "JWT_SECRET": "@JWT_SECRET"
   },
   "builds": [
     {

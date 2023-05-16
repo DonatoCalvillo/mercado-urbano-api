@@ -1,14 +1,5 @@
 {
   "version": 2,
-  "env": {
-    "DB_HOST": "@DB_HOST",
-    "DB_PORT": "@DB_PORT",
-    "DB_NAME": "@DB_NAME",
-    "DB_USERNAME": "@DB_USERNAME",
-    "DB_PASSWORD": "@DB_PASSWORD",
-    "PORT": "@PORT",
-    "JWT_SECRET": "@JWT_SECRET"
-  },
   "builds": [
     {
       "src": "src/main.ts",

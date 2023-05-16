@@ -5,6 +5,7 @@
   "author": "Edgar Donato Calvillo Lumbreras",
   "private": true,
   "license": "UNLICENSED",
+  "type": "commonjs",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",

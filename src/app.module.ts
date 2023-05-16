@@ -7,7 +7,7 @@ import { UserModule } from './user/user.module';
 import { EventModule } from './event/event.module';
 
 @Module({
-  imports: [ 
+  imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'mysql',
@@ -16,7 +16,8 @@ import { EventModule } from './event/event.module';
       database: process.env.DB_NAME,
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
-      entities:[],
+
+      entities: [],
       autoLoadEntities: true,
       synchronize: false, //In production most be FALSE
     }),

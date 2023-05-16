@@ -8,7 +8,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: 'https://www.corredor-gastronomico.com',
+    origin: '*',
     methods: ['POST', 'PUT', 'DELETE', 'GET'],
   });
 

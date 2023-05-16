@@ -7,7 +7,7 @@ import { logStandar } from './helper/logStandar';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: 'https://www.corredor-gastronomico.com',
+    origin: 'https://mercado-urbano-api-2-1vrhzayo1-donatocalvillo.vercel.app',
   });
 
   app.setGlobalPrefix('api');

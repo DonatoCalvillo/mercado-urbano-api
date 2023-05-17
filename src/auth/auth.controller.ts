@@ -75,7 +75,8 @@ export class AuthController {
       }),
     )
     file: Express.Multer.File,
+    @Res() res: Response,
   ) {
-    return this.authService.masiveRegister(file);
+    return this.authService.masiveRegister(file, res);
   }
 }

@@ -382,8 +382,9 @@ export class AuthService {
     return `CAR${number}-${area[0]}`;
   };
 
-  async masiveRegister(file: Express.Multer.File) {
+  async masiveRegister(file: Express.Multer.File, res: Response) {
     try {
+      let response: IResponse;
       let workBook = new Workbook();
       await workBook.xlsx.load(file.buffer);
 
@@ -495,11 +496,23 @@ export class AuthService {
         }),
       );
 
+      response = {
+        success: true,
+        data: newUsers,
+        message: 'The masive register was success.',
+      };
+
       // await this.useRepository.save(newUsers[1]);
 
-      return newUsers;
+      return res.status(200).json(response);
     } catch (error) {
-      return error;
+      const response: IResponse = {
+        success: false,
+        message: 'Internal server error: ' + error,
+        data: {},
+        error_code: 500,
+      };
+      return res.status(500).json(response);
     }
   }
 }

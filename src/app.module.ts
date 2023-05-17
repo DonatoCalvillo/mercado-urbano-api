@@ -5,7 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { CommonModule } from './common/common.module';
 import { UserModule } from './user/user.module';
 import { EventModule } from './event/event.module';
-import fs from 'fs';
+import * as fs from 'fs';
 
 @Module({
   imports: [
@@ -21,8 +21,12 @@ import fs from 'fs';
       autoLoadEntities: true,
       synchronize: false, //In production most be FALSE
       ssl: {
-        rejectUnauthorized: false,
-        ca: process.env.DB_SSL,
+        rejectUnauthorized: true,
+        crt: fs
+          .readFileSync(
+            __dirname + '/certificates/DigiCertGlobalRootCA.crt.pem',
+          )
+          .toString(),
       },
     }),
     AuthModule,

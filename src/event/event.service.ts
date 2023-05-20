@@ -60,17 +60,31 @@ export class EventService {
   async generarLugares() {
     try {
       const plaza = await this.plazaRepository.findOne({
-        where: { id: 'e7f146b6-a8bb-11ed-96ab-4bda625ca93a' },
+        where: { nombre: 'Parque Independencia' },
       });
 
-      const area = await this.areaRepository.findOne({
-        where: { id: '3bb02804-9d93-11ed-8c7e-a453eed313a7' },
+      const areaGastronomia = await this.areaRepository.findOne({
+        where: { nombre: 'Gastronomia' },
+      });
+
+      const areaComercio = await this.areaRepository.findOne({
+        where: { nombre: 'Comercio' },
       });
 
       for (let index = 1; index <= 50; index++) {
         const lugar = this.lugarRepository.create({
           numero: index,
-          area,
+          area: areaGastronomia,
+          plaza,
+        });
+
+        await this.lugarRepository.save(lugar);
+      }
+
+      for (let index = 1; index <= 50; index++) {
+        const lugar = this.lugarRepository.create({
+          numero: index,
+          area: areaComercio,
           plaza,
         });
 
@@ -282,10 +296,10 @@ export class EventService {
         users.map((usuario, i) => {
           const _fechaInscripcion = new Date(fechaInscripcion);
 
-          if (i >= 0 && i <= 20) _fechaInscripcion.setHours(6);
-          else if (i > 10 && i <= 40) _fechaInscripcion.setHours(7);
-          else if (i > 40 && i <= 60) _fechaInscripcion.setHours(8);
-          else if (i > 60 && i <= 80) _fechaInscripcion.setHours(9);
+          if (i >= 0 && i <= 20) _fechaInscripcion.setHours(21);
+          else if (i > 10 && i <= 40) _fechaInscripcion.setHours(22);
+          else if (i > 40 && i <= 60) _fechaInscripcion.setHours(23);
+          else if (i > 60 && i <= 80) _fechaInscripcion.setHours(23);
           else _fechaInscripcion.setHours(10);
 
           _fechaInscripcion.setDate(_fechaInscripcionTmp.getDate());

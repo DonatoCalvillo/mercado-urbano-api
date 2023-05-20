@@ -488,7 +488,7 @@ export class AuthService {
 
             await this.useRepository.save(tempUser);
 
-            return tempUser;
+            return { ...tempUser, contraseñaDesencript: contrasenia };
             // return { rol, area, areeea: newUser.fk_area };
           } catch (error) {
             console.log(error);
@@ -501,8 +501,6 @@ export class AuthService {
         data: newUsers,
         message: 'The masive register was success.',
       };
-
-      // await this.useRepository.save(newUsers[1]);
 
       return res.status(200).json(response);
     } catch (error) {

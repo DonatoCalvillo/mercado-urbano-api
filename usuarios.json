@@ -1,0 +1,1850 @@
+[
+  {
+    "nombre": "GERMAN MARTIN",
+    "apellido_paterno": "OSORIO",
+    "apellido_materno": "VALDEZ",
+    "matricula": "CAR003-C",
+    "contrasenia": "$2b$10$zGddiIdDwObzfrEvynpze.HCBMYFEH2POL1X2JooKnUHEF0v1lThi",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371401780,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "395e84ba-8015-4037-82f5-9bd170952a09",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "J%Kl-T<j(w"
+  },
+  {
+    "nombre": "JULIANA",
+    "apellido_paterno": "EK",
+    "apellido_materno": "CASANOV",
+    "matricula": "CAR001-C",
+    "contrasenia": "$2b$10$ecRiJQLI3gFv/AYl0/2hNee.9zu5mDKoSHLZ9gXSZPXYWqILFFsBq",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371198124,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "27040329-cfa2-4872-b3f3-4738a101d597",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "&N5k~~=%i_"
+  },
+  {
+    "nombre": "SOFIA",
+    "apellido_paterno": "CASTILLO",
+    "apellido_materno": "RICARDEZ",
+    "matricula": "CAR012-C",
+    "contrasenia": "$2b$10$NJoy8g1oCZrxb1lD4BW44.SbujCJKwvrE1JA9qtyiXv.JAGnD.5te",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9931449575,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "b6189e76-344c-4f32-b259-564ba8786ce4",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "P\"[3.cNp!0"
+  },
+  {
+    "nombre": "JOSE LUIS",
+    "apellido_paterno": "GARCIA",
+    "apellido_materno": "BELTRAN",
+    "matricula": "CAR006-C",
+    "contrasenia": "$2b$10$x4wRy9EZkZq7v.U9B9MBouPX9Mm5VKZxHUN7uwXGyqsmRzMnJ1IAe",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371067728,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "b68e69f0-2e57-4d98-ac22-676514f7e059",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "{Q=GT4:n51"
+  },
+  {
+    "nombre": "JOSE ALBERTO",
+    "apellido_paterno": "ESCALANTE",
+    "apellido_materno": "MONDRAGON",
+    "matricula": "CAR010-C",
+    "contrasenia": "$2b$10$YE.99.8ROuukT3txActh6u27HnfDlpuQvEqGqhu2ZkuM99EQKHAAq",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9932589844,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "410f4699-09ac-4b48-b2a7-cd0023a73d90",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "E,$4Z]hx48"
+  },
+  {
+    "nombre": "JOSE JUAN",
+    "apellido_paterno": "GONZALEZ",
+    "apellido_materno": "RODELA",
+    "matricula": "CAR002-C",
+    "contrasenia": "$2b$10$u7/Vh4Mz53ke9KouklFdwOT/yeCGpaX6fvmMpRuN7DlSS6U1loNVS",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "414554b5-5e48-47e4-bb5c-4a7540a3aee3",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "^i5pK[FlN>"
+  },
+  {
+    "nombre": "JORGE IRAN",
+    "apellido_paterno": "PEREZ",
+    "apellido_materno": "COVARRUBIAS",
+    "matricula": "CAR011-C",
+    "contrasenia": "$2b$10$XjzyipqdXplq3izYFALY5eYX0ovaO.BYl/YwWRnkxtDhBXUVy5gg.",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371081440,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "7319c7de-ee94-4cdf-9ec0-0191d3daa68f",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "r_qW(0^?S."
+  },
+  {
+    "nombre": "DAVID",
+    "apellido_paterno": "ARIAS",
+    "apellido_materno": "HERNANDEZ",
+    "matricula": "CAR028-C",
+    "contrasenia": "$2b$10$PbJtBbhjpDiJNnNNCv6wruoUESJGxM841m8cYOtDIYVw8cuEyBBZC",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371408094,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "5c25501c-1184-4f7f-abc2-0a04da4ac562",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "8UkYnPk.D-"
+  },
+  {
+    "nombre": "RICARDO",
+    "apellido_paterno": "CANO",
+    "apellido_materno": "MURILLO",
+    "matricula": "CAR009-C",
+    "contrasenia": "$2b$10$ugIX/xsjoBIwOQrfkmNJq.A6mgPBb7cL9wf5tb5VGSnoscI36I86u",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371219101,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "13d392de-a3c5-4f6f-8231-699a500a408a",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "%-A]&1|eUU"
+  },
+  {
+    "nombre": "EFRAI",
+    "apellido_paterno": "FAUST",
+    "apellido_materno": "BURGOS",
+    "matricula": "CAR016-C",
+    "contrasenia": "$2b$10$PJ9HdLCqIVDIGPk33SzB4eNecKTGbxB3izz1sVGDvD42aFHLpByAm",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9931196885,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "caf2bb05-7faa-49dd-a966-0b83128524a7",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "r$v%ts4)dt"
+  },
+  {
+    "nombre": "MARIA ELENA",
+    "apellido_paterno": "ROSIQUE",
+    "apellido_materno": "RAMIREZ",
+    "matricula": "CAR004-C",
+    "contrasenia": "$2b$10$sXqrCEw95CRJianAeUcVjejPKO.AgBe5AfNRjfUaXC45M6WlNVh2W",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371384100,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "280cdfcc-36b4-4e06-ac6b-18e2cf7a951d",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "wNQLEXoW(X"
+  },
+  {
+    "nombre": "MIRELLA",
+    "apellido_paterno": "JIMENEZ",
+    "apellido_materno": "ZENTELLA",
+    "matricula": "CAR005-C",
+    "contrasenia": "$2b$10$JzaRNNR9mox8WMFWM5rxvu6IfJm439lw2d5PotFmZie2dTJMLriae",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371641846,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "2c595bc5-92c4-4ada-9918-51e8c45b5762",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "w12f]}mMa,"
+  },
+  {
+    "nombre": "EDDY JESU",
+    "apellido_paterno": "SANTIAGO",
+    "apellido_materno": "ROJAS",
+    "matricula": "CAR008-C",
+    "contrasenia": "$2b$10$zy.bkjI4aCsMrsGyXwyB.e/uSNdD8iN9YIn0VqkSdqZFOKUXZTQDe",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "dc358990-e887-4c3b-aa88-5c458939a1d2",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": ">kyF:t^X67"
+  },
+  {
+    "nombre": "JESUS",
+    "apellido_paterno": "SANTIAGO",
+    "apellido_materno": "NUNGARAY",
+    "matricula": "CAR007-C",
+    "contrasenia": "$2b$10$Y1gT.gYgjhUao04Ha5RX9uU9GWCxCLm5a5nzVC8Z5JGfZt0vkA7J.",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371245569,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "56e6eca4-1961-4ace-a269-070d8ef008c6",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "pTlh/B_v32"
+  },
+  {
+    "nombre": "ONAM",
+    "apellido_paterno": "VACONCELOS",
+    "apellido_materno": "RAMOS",
+    "matricula": "CAR014-C",
+    "contrasenia": "$2b$10$XFj7rWC34PMiilCz6kq2aOLdz5Af8Yln7a3g7SORAnGBW7/wRwX4e",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9993577469,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "e8b15b0b-8a22-4930-910d-65d2c25ad586",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "ZSY7qD(7-z"
+  },
+  {
+    "nombre": "LEYDI DIANA",
+    "apellido_paterno": "BALCAZR",
+    "apellido_materno": "JIMENEZ",
+    "matricula": "CAR026-C",
+    "contrasenia": "$2b$10$N/4ljLZNofB6eY0YyXtE4eHHd1BrdOaQphgNVD2tFtCKueN1yh5r6",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "d113cc8f-c5fd-4330-822b-ed4380a7efe9",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "eJChS{q4:k"
+  },
+  {
+    "nombre": "DIEGO",
+    "apellido_paterno": "ALONSO",
+    "apellido_materno": "PEREZ",
+    "matricula": "CAR013-C",
+    "contrasenia": "$2b$10$ttyHthwsyVghuCK1fEuvU.UpYI3lDquEERHR2tO701fAp3mkurxMm",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "1db80bbe-91c6-4b1c-a859-1dc4824007da",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "<XD/lUu6v;"
+  },
+  {
+    "nombre": "ALICIA",
+    "apellido_paterno": "MENDEZ",
+    "apellido_materno": "TOVILLA",
+    "matricula": "CAR015-C",
+    "contrasenia": "$2b$10$YFGu7Ul2OeOHnvVCdAbR5OR9QBZhV.7P1CVbYzZqEViWtalnwpMTi",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "80bd7321-fd0a-4186-905d-fc5e6283847f",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "zQ/ES!$}r-"
+  },
+  {
+    "nombre": "CARLOS ",
+    "apellido_paterno": "SANCHEZ",
+    "apellido_materno": "MONTELLANO",
+    "matricula": "CAR020-C",
+    "contrasenia": "$2b$10$BZVQHknjoZkB41in4SMbEuByr2xf0L8gQbLZBdkd8JfeGlCPzlXky",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "8dee25a7-4bdc-4b69-8071-70b34bfd65d0",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "u)C/~-%MI{"
+  },
+  {
+    "nombre": "JUANA",
+    "apellido_paterno": "RAMOS",
+    "apellido_materno": "RAMOS",
+    "matricula": "CAR018-C",
+    "contrasenia": "$2b$10$Aa4gYJIGofBT3cfckrlXHelTXLqvA43oRZJl.edf1HtRKLxJOa0kG",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371029843,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "89131a73-ab44-4110-8d07-e99b84c3153e",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "B1/w)0`Tyi"
+  },
+  {
+    "nombre": "ANA ESTHER",
+    "apellido_paterno": "JIMENEZ",
+    "apellido_materno": "",
+    "matricula": "CAR023-C",
+    "contrasenia": "$2b$10$XK5U38YrEG9DUxlq/AtnaeirRMExDGQw0vpPqrfDH1FaEZOt4dUgO",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "03c99f0d-90c7-43dc-9fd9-68e4bc46e9a0",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "@x.!4RG8f2"
+  },
+  {
+    "nombre": "LUIS ENRIQUE",
+    "apellido_paterno": "RAMOS",
+    "apellido_materno": "RAMOS",
+    "matricula": "CAR017-C",
+    "contrasenia": "$2b$10$54TDe.KNqjptmsaeXXyCd.lB6d76aorljVE8zRloY7jZGnSXbudjK",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "045a2d2a-4359-47d1-9a83-3c78ecabcf28",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "CqI\"=xUJRG"
+  },
+  {
+    "nombre": "NATIVIDAD",
+    "apellido_paterno": "LAYNES",
+    "apellido_materno": "OLAN",
+    "matricula": "CAR019-C",
+    "contrasenia": "$2b$10$pQVCvAdZvlDICu8GBFHAF.VZCChjq/m96LSFpUaau5Amw9x1HoLRC",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "c8f67243-c61e-47c7-9405-d8fe8c75a477",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "BB?(Oa%02_"
+  },
+  {
+    "nombre": "JEOVANNY",
+    "apellido_paterno": "SOL",
+    "apellido_materno": "VALENZUELA",
+    "matricula": "CAR025-C",
+    "contrasenia": "$2b$10$PheiqLIPBY1wWuRedkgH.OUDMn19anGV/4kiTJsRm8gJlz3oNcLM.",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "31261591-bb98-4414-89a8-072faa57c411",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "C]U`/EI}fM"
+  },
+  {
+    "nombre": "MARIA DE LOS ANGELES",
+    "apellido_paterno": "LEYVA",
+    "apellido_materno": "AVALOS",
+    "matricula": "CAR021-C",
+    "contrasenia": "$2b$10$OaCkbURGo9IxWOZSgOZqrOxMwNLvrvKsWIstoNXNm//1PFwJIs63u",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "20f626db-5633-4462-acec-d63b8423017e",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "cHJXeA]BQa"
+  },
+  {
+    "nombre": "BEATRIZ  ADRIANA",
+    "apellido_paterno": "MOLINA",
+    "apellido_materno": "JIMENEZ",
+    "matricula": "CAR022-C",
+    "contrasenia": "$2b$10$4EG/Bqf8F7RBhhw6tn2IXeW10/9mHZrvHlDDI.nPpIINAurmuL1pu",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9372270565,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "f89f0ab0-b062-4254-8663-77a40dca2f49",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "gZ,aO;yEW?"
+  },
+  {
+    "nombre": "LUIS ENRIQUE",
+    "apellido_paterno": "ALONSO",
+    "apellido_materno": "ULIN",
+    "matricula": "CAR036-C",
+    "contrasenia": "$2b$10$WP6dXpl7CX0/n.b4MDQen.gS/sXhTH77iRA5ANWeNo/McY/MPVeJi",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 2283643177,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "9e4cd1d7-41dd-4a0e-8279-b998769be41b",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "Kf0`CDeNs~"
+  },
+  {
+    "nombre": "ROCIO DEL PILAR",
+    "apellido_paterno": "GAMAS",
+    "apellido_materno": "COLORADO",
+    "matricula": "CAR038-C",
+    "contrasenia": "$2b$10$GUXUVR4v0e1Jnc2.X6Pa0.c.Skwfzqcg.QT7Y1q78VW64dG86dSk2",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371165017,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "b9e68f03-1ce3-47a7-ae42-a7ea003db696",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "+46[TB`Be*"
+  },
+  {
+    "nombre": "DALILA",
+    "apellido_paterno": "VILLAREAL",
+    "apellido_materno": "VELAZCO",
+    "matricula": "CAR039-C",
+    "contrasenia": "$2b$10$NjHS//9gmhHKqkir92TXW.33EkZPg7Xn2rLIrM.d8t5IeCIzLLfjC",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371676390,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "d5ee2795-9059-49a8-a804-e5a64398a243",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "l|#E{>r*m;"
+  },
+  {
+    "nombre": "MA DEL CARMEN",
+    "apellido_paterno": "VIDAL",
+    "apellido_materno": "PIMIENTA",
+    "matricula": "CAR027-C",
+    "contrasenia": "$2b$10$du.x19vmHrWBFQfRdLth8euz511qqheDiDU2bP7BEgPHMxKSZOyFK",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "35e8fa1a-2e80-490d-8ea5-6c3f7e51cb17",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "|liTu<p.ny"
+  },
+  {
+    "nombre": "NEFTALI",
+    "apellido_paterno": "JIMENEZ",
+    "apellido_materno": "GONZALEZ",
+    "matricula": "CAR024-C",
+    "contrasenia": "$2b$10$vRdjGxwnyZ.fV8/.ivVWUOVmPBB0ivTAQk8YA2aQhLXxlbPYQIlfy",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371715893,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "caeac80d-1699-46ff-8b14-b0496b13bb98",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "kgWtNHFvC!"
+  },
+  {
+    "nombre": "MARIA  ISABEL",
+    "apellido_paterno": "GOME",
+    "apellido_materno": "CRIVELLY",
+    "matricula": "CAR031-C",
+    "contrasenia": "$2b$10$isiBLOL6wIfIwn8B7xa7QeRKMssIrapQe50AYXu.5OrLhpaVu.V9m",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371202490,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "46a39b2f-e6fb-4d30-96f4-b37fb480d237",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "6&6KfoD|z!"
+  },
+  {
+    "nombre": "NURY",
+    "apellido_paterno": "HERRERA",
+    "apellido_materno": "NARVAE",
+    "matricula": "CAR033-C",
+    "contrasenia": "$2b$10$S7EFaeVg.6NBCLgDd4cdXOHysY0X41yBvxYth9VDDsdADFmhtBXI.",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371088160,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "e9af313b-e545-4ee8-a853-23fdf2cdff28",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "ipHvu%$Shy"
+  },
+  {
+    "nombre": "YANINA GP",
+    "apellido_paterno": "MORALES",
+    "apellido_materno": "SANCHEZ",
+    "matricula": "CAR032-C",
+    "contrasenia": "$2b$10$JXh927E4FiqXYenKQ7//Pe3Tr/H61p/gvIN00E50f51qeWnTV7oVe",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371101606,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "5d087549-b282-40fb-a1e0-b7153c324395",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "3[JOYh^eqE"
+  },
+  {
+    "nombre": "ANA LINDA",
+    "apellido_paterno": "GARCIA",
+    "apellido_materno": "PEREZ",
+    "matricula": "CAR030-C",
+    "contrasenia": "$2b$10$OZGYvaylCdKqAzBg8a36D.ui0DWPXqrsrplc30iDcAqewpfDcOgBG",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371202918,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "30ad6577-85e8-46ba-9539-73085e27c4c2",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "MAi#E|A8eD"
+  },
+  {
+    "nombre": "NORA CRISTEL",
+    "apellido_paterno": "MUÑOZ",
+    "apellido_materno": "MONTIEL",
+    "matricula": "CAR029-C",
+    "contrasenia": "$2b$10$.xOwrigWdM.PUD5nmQtZE.IctSWkugqYH16NhtGvw183TA9RqHCAK",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371620636,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "ca2f73be-8732-4d53-b9b4-f033a6f951d9",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "8qtJA~7[Vo"
+  },
+  {
+    "nombre": "ANA LUISA",
+    "apellido_paterno": "HERNANDEZ",
+    "apellido_materno": "AVALOS",
+    "matricula": "CAR053-C",
+    "contrasenia": "$2b$10$UCBEnRjqz64M0eC5fSeXAurq8Hnc8Sekovyv7MKfH0u6Xli89W6jS",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371559940,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "3abe36ad-8c05-4f54-a1df-4bc8edf0764f",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": ";=A62K;K#p"
+  },
+  {
+    "nombre": "ERI",
+    "apellido_paterno": "DE LA CRUZ",
+    "apellido_materno": "PULIDO",
+    "matricula": "CAR037-C",
+    "contrasenia": "$2b$10$WkIVUYiDtfwkWaxuDSjMyu0cHpWvVIGURJ3O6POZACwRmvvTzvyfy",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9981404593,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "d9b9679a-2413-4bb6-8d34-4552caf6a933",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "v[gsibPF(1"
+  },
+  {
+    "nombre": "MARIBEL",
+    "apellido_paterno": "MENDEZ",
+    "apellido_materno": "MONDRAGON",
+    "matricula": "CAR034-C",
+    "contrasenia": "$2b$10$tfyCGGihcfMIHJ2K0mg8euBFEfSglcmsjGXKqzHMtvIKaS/3Uot7y",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371080522,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "5a398f6d-6d8f-4308-bd04-4dd2b64e7178",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "$>Bt5o*)~p"
+  },
+  {
+    "nombre": "CARLA ESTEFANIA",
+    "apellido_paterno": "CONSTATINO",
+    "apellido_materno": "MARTINEZ",
+    "matricula": "CAR035-C",
+    "contrasenia": "$2b$10$oKwqp/dRosl0vBCvfaqMI.8km/xy7mUPdODVqrs8ldq4LxsGKMzeq",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9934088869,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "1d61b062-384b-4080-9ad9-63b8a948d578",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": ":QjoIF6C28"
+  },
+  {
+    "nombre": "BRENDA ESPERANZA",
+    "apellido_paterno": "NAVARRO",
+    "apellido_materno": "TORRUCO",
+    "matricula": "CAR041-C",
+    "contrasenia": "$2b$10$MpaO8AtMr82ooKAx6CMIce8h6Puq/eERQnWLAGw6PNtW063Gr4pzS",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371706418,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "85d473f4-466d-463d-b4ce-9ecac2215fa7",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "*^$i8EJrD1"
+  },
+  {
+    "nombre": "DIANA ITZEL",
+    "apellido_paterno": "MARTINEZ",
+    "apellido_materno": "VAZQUEZ",
+    "matricula": "CAR042-C",
+    "contrasenia": "$2b$10$EDNysrf4XPqhx7.0Q4.w5un4.bG1s/R5cvzXwhVUeFpNNtNJIEv5O",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371549728,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "63aed413-c782-4736-a8a1-69c807653687",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "?$<f4L(ID-"
+  },
+  {
+    "nombre": "ESPERANZA",
+    "apellido_paterno": "MORALES",
+    "apellido_materno": "HDEZ",
+    "matricula": "CAR040-C",
+    "contrasenia": "$2b$10$ntFUJbzg6OdXXd7HK9sPp.dsPb1X4SHg86AbZ966QBYulNrlBPSoi",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9372309120,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "aef13e3e-0ccb-4646-a0dd-ddc7e49a8589",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "r,>+J9I{E-"
+  },
+  {
+    "nombre": "ROSALINDA",
+    "apellido_paterno": "PEREZ",
+    "apellido_materno": "CONTRERAS",
+    "matricula": "CAR043-C",
+    "contrasenia": "$2b$10$YWxb1t.LznhLKev.hv/asuoa60QXPQOk0x.Gdu326f3Y4v5oyBsqm",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371553279,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "7adec0ed-9293-4f26-a69b-b45fae6945c9",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "J9vWN^Iw`N"
+  },
+  {
+    "nombre": "VIRGINIA",
+    "apellido_paterno": "DE LA CRUZ",
+    "apellido_materno": "ESPAÑA",
+    "matricula": "CAR045-C",
+    "contrasenia": "$2b$10$llNH8v4PC28Vx7S2j3M3f.3S3X9BzdfodESCQFIrpQw/PHI4MphWu",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371255511,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "92d976b0-8e23-49dd-9101-1d3ea3e54939",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "mLt{%Rnmpf"
+  },
+  {
+    "nombre": "SILVIA MARI",
+    "apellido_paterno": "ROMAN",
+    "apellido_materno": "RAMOS",
+    "matricula": "CAR047-C",
+    "contrasenia": "$2b$10$9Rkztw6J9MmqVEgv0Pyj6.dANxGhVqKsO8s7vr5rnlicrJjJodKSG",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "f1fd41e2-b933-495b-8105-283e95044dd2",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "~k?S(@$p3("
+  },
+  {
+    "nombre": "SILVIA",
+    "apellido_paterno": "MAGALI",
+    "apellido_materno": "PEREZ",
+    "matricula": "CAR050-C",
+    "contrasenia": "$2b$10$6FljRR.NHi2Z2waHyyt3xeQIC82iiwSz39eJm3B3dN90CHo9YTTyC",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "9e8f9b35-c98f-4154-ba01-d032ea8edaee",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "_cmZz91|]&"
+  },
+  {
+    "nombre": "LEIDY",
+    "apellido_paterno": "ALMEIDA",
+    "apellido_materno": "PEREZ",
+    "matricula": "CAR046-C",
+    "contrasenia": "$2b$10$KqyvhnklH5PzkH1JPJ88D.58/hfrC/K0mo9492GFKSfPt2yE8HPC6",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "f448b87f-55cc-4f27-ac90-64f4c9df0ad7",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "*(@T%jJs9@"
+  },
+  {
+    "nombre": "MARIA FERNANDA",
+    "apellido_paterno": "SOLIS",
+    "apellido_materno": "FLORES",
+    "matricula": "CAR044-C",
+    "contrasenia": "$2b$10$xtd4/9bRFSloHC0H76BEEOGIeAnPq1IB8rckndpxTuw4mkvTEJGsS",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371653328,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "7b595b2a-3cbf-404f-bd85-bbf016508589",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "]zH(~8R>|T"
+  },
+  {
+    "nombre": "DULCE MARIA",
+    "apellido_paterno": "GONZALEZ",
+    "apellido_materno": "HERNANDEZ",
+    "matricula": "CAR048-C",
+    "contrasenia": "$2b$10$2lKWxjfPpIi9LLozp1DG5O7HeCB4862ke8x/OHMk8v5LmJ6LrOlMi",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371062464,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "69f7a91c-4486-4acc-bbb7-202cc2194524",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "F!p[2@K};A"
+  },
+  {
+    "nombre": "GABRIEL",
+    "apellido_paterno": "GONZALEZ",
+    "apellido_materno": "PEREZ",
+    "matricula": "CAR051-C",
+    "contrasenia": "$2b$10$NXf2CWwyuGDeG5jd1NPP9e9Vov.BP9Yd.JzQtXdVbvFG2JAdWLzxW",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9931510100,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "66cf2e20-8416-4258-bf2a-0fe78cc39b69",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "f=`]m\"AJ!z"
+  },
+  {
+    "nombre": "DELANIRA",
+    "apellido_paterno": "PEREZ",
+    "apellido_materno": "ORTIZ",
+    "matricula": "CAR049-C",
+    "contrasenia": "$2b$10$aj0ORJGGzVsVf8uIarQS.ePaO9PPEU8Ha9iBwGXU3FUgC.FP3RVCm",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9381857851,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "33deab59-4a8a-4e25-b7b9-48b1372ecb24",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "Lt#}m{#L#^"
+  },
+  {
+    "nombre": "DANIEL",
+    "apellido_paterno": "SOL",
+    "apellido_materno": "VALENZUELA",
+    "matricula": "CAR052-C",
+    "contrasenia": "$2b$10$7a0shPIR0X10ReXg0qm2Me1g2TmOASpxklS.jKTylqf5LtOZogJG6",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9984186777,
+    "area": {
+      "id": "a45236d5-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Comercio",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "6c3a1dc4-09bb-4f7e-a9fa-df45a9cc8305",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "f,(f(\"%6De"
+  },
+  {
+    "nombre": "ELIZAIDA",
+    "apellido_paterno": "VAZQUEZ",
+    "apellido_materno": "SANTIAGO",
+    "matricula": "CAR001-G",
+    "contrasenia": "$2b$10$WVNobQVDxInLjY3Z7uk07.ZrbrA.Zbu3phPK0/5nnfuOyaAzTn3V.",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9373780288,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "518fc69f-cd4c-44c4-8e80-a695c2cac332",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "pXu,gRx,wI"
+  },
+  {
+    "nombre": "STEVEN LEONARDO",
+    "apellido_paterno": "ARIAS",
+    "apellido_materno": "HERNANDEZ",
+    "matricula": "CAR002-G",
+    "contrasenia": "$2b$10$spd5K.h/AMuGAPKSiD5Ye.wHk/kq8Rl9.nm2sRuC9qKa5lr8hQ.2q",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9373742092,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "78b206a2-bd59-4fca-9837-db27eab44646",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "lLX#dT0vX3"
+  },
+  {
+    "nombre": "ANGEL DE JESUS",
+    "apellido_paterno": "MECOT",
+    "apellido_materno": "CALDERON",
+    "matricula": "CAR003-G",
+    "contrasenia": "$2b$10$xW7SKBtBghrX3D6LJGH8/uTte5JsZFrw3xYQtKWPtGOrIAYWcTaFi",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9935619945,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "554b1ed4-24b3-4c40-8d79-27243a6b8a70",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "]v{uHI#6T*"
+  },
+  {
+    "nombre": "PALMIRA",
+    "apellido_paterno": "PEREZ",
+    "apellido_materno": "LOPEZ",
+    "matricula": "CAR004-G",
+    "contrasenia": "$2b$10$24S17MofbulCwhXyHCkQw.CST3fdh5ER7KCWexda7zvvU2VMC5eyG",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9372276263,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "b7b7cdb6-188a-4867-b4ef-b621cc20f24b",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "6S9By{@-{R"
+  },
+  {
+    "nombre": "MARITZA",
+    "apellido_paterno": "SANTOS",
+    "apellido_materno": "ZENTELLA",
+    "matricula": "CAR005-G",
+    "contrasenia": "$2b$10$uXit8gQNFybT6j5rN34Tk.54qJLbqsn0sbtJ3Xh0ynO3TlJ/uNYBC",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "c1a854c9-8a28-4b9d-bc9c-387650711e39",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "bBy%oQ5O(u"
+  },
+  {
+    "nombre": "IVET YAHANA",
+    "apellido_paterno": "HERNANDEZ",
+    "apellido_materno": "DE LA ROSA",
+    "matricula": "CAR006-G",
+    "contrasenia": "$2b$10$mUzV2shb9ndnBKxsxDQxVur3FLuzRGlVp/cV3kw.AAnJoI88zo0ti",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371063083,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "fc3faad3-7996-4441-af73-a1e5e7895a0e",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "?;5W8sLjI?"
+  },
+  {
+    "nombre": "NOEMI",
+    "apellido_paterno": "SALAS",
+    "apellido_materno": "OJEDIZ",
+    "matricula": "CAR007-G",
+    "contrasenia": "$2b$10$TLbFwXexq3QsPiKj.jrZ7O3OAgcnB8HeCNgBhn.D0Vexn/AUBxkV.",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 7441646216,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "f7bbf666-efc4-4a06-9ecf-3074d15ee263",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "s$]::gM@d{"
+  },
+  {
+    "nombre": "JAZIVE",
+    "apellido_paterno": "ALEJANDRO",
+    "apellido_materno": "BOLAIN",
+    "matricula": "CAR008-G",
+    "contrasenia": "$2b$10$pkw.290tB9P7OzFAZhYcTuT9D3OZ0F.siYye2gOtznZca4od6eTma",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371322146,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "1aeabf69-566a-41d7-af8f-3a3b5594f802",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "VD<qz4Q.S@"
+  },
+  {
+    "nombre": "CYNTHIA CRISTELL",
+    "apellido_paterno": "EVIA",
+    "apellido_materno": "JIMENEZ",
+    "matricula": "CAR009-G",
+    "contrasenia": "$2b$10$sH29uSsjg24uVsbXNI4Xh.cn5/7SnLeD4dEtCTTZcypSa9heUSEci",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371266574,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "3e045a33-717a-404d-a4f8-381565244a38",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "<ok/+_ID:D"
+  },
+  {
+    "nombre": "JOSE LUIS",
+    "apellido_paterno": "PEDRAZA",
+    "apellido_materno": "MARIN",
+    "matricula": "CAR010-G",
+    "contrasenia": "$2b$10$YKOyldYVmF.26Bvg3clxnu/vfVEiRDmku2XYFmvKR3ri.C0rZcbiG",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371670573,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "ece44492-8eae-4ae2-a4e7-2a9a283ad527",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "?~Ybl=VG\"6"
+  },
+  {
+    "nombre": "BELGICA",
+    "apellido_paterno": "JIMENEZ",
+    "apellido_materno": "LOPEZ",
+    "matricula": "CAR017-G",
+    "contrasenia": "$2b$10$8lqVptDJ9fO7/3R.m6b.k.xh5j2htsPeivd1lb49llGx0cXUdrvIa",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371667629,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "ac499bcb-0185-4795-bf08-1b6dcd428639",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "Aw4tD&z!LA"
+  },
+  {
+    "nombre": "JENIFER CELINA",
+    "apellido_paterno": "VALENZUELA",
+    "apellido_materno": "JIMENEZ",
+    "matricula": "CAR014-G",
+    "contrasenia": "$2b$10$aORl7ucg/gljhdqyQbTiI.r4wp5N6YtaGQS9A1AHx55l0fIPXMvyS",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371642356,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "30751130-db21-4eaf-963f-f4d7cca52fb4",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": ",_Y8~8y44B"
+  },
+  {
+    "nombre": "LETICIA",
+    "apellido_paterno": "REYES",
+    "apellido_materno": "RAMOS",
+    "matricula": "CAR012-G",
+    "contrasenia": "$2b$10$/ZFd.LBhzjCzGMl.rQh7Ne35.Raa89B0GkWXZVShOOWkiHFv8azsW",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371063805,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "11002276-fc23-40c7-b8aa-933c6a12510d",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "GU[=,&57|S"
+  },
+  {
+    "nombre": "CAROLINA",
+    "apellido_paterno": "CORDOVA",
+    "apellido_materno": "PALMA",
+    "matricula": "CAR013-G",
+    "contrasenia": "$2b$10$.R.AIKACHRv.wlZOmWOCK.ZFzgmpycRrqTa9Qt7wqtyoZtyTTIhDG",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "2325ebcc-f867-4be9-866d-b04adfe1f392",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "eDZP9)u^6s"
+  },
+  {
+    "nombre": "ALEJANDRO",
+    "apellido_paterno": "BELTRAN",
+    "apellido_materno": "JIMENEZ",
+    "matricula": "CAR021-G",
+    "contrasenia": "$2b$10$khhGlPbxxwhvyuxXox/Gjeoz6j1MgcJkDtWU3mgNpustat7LMjmdy",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9372720759,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "562e17ca-2f38-41f9-950e-02eb0bcfca20",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "Y1H}V7XxY\""
+  },
+  {
+    "nombre": "BEJAMIN",
+    "apellido_paterno": "GARCIA",
+    "apellido_materno": "MONTEJO",
+    "matricula": "CAR018-G",
+    "contrasenia": "$2b$10$ygMvbBl.94Ej/ZHyAi0o2.uB1y6iTkOAK7Rgf4of9rnkhY8Fbl4gW",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9372833597,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "0351c0b8-8a42-4a94-9f02-b9149d332529",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "a;U`mJ-.h9"
+  },
+  {
+    "nombre": "ZULLY",
+    "apellido_paterno": "GUTIERREZ",
+    "apellido_materno": "JIMENEZ",
+    "matricula": "CAR011-G",
+    "contrasenia": "$2b$10$O3Y/iKRuuMAbA2slrdChHO63ed4IF2NWrLw4DaUkbN8H2iwykoi0S",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371321172,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "c74d3410-505e-4793-8d21-3d95c6edd6ff",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "P_vn(eop89"
+  },
+  {
+    "nombre": "DAVID",
+    "apellido_paterno": "ARENAS",
+    "apellido_materno": "ALMEIDA",
+    "matricula": "CAR015-G",
+    "contrasenia": "$2b$10$ZpPc4BcFRS0Rr21OtIVGlu1tNJLx4.TfZ9oZGPhs0WlVwG5qJ6NC2",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "84fad213-b58e-4221-b2f4-66c7aed14e92",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": ">+OjRMVB(-"
+  },
+  {
+    "nombre": "JORGE ALBERTO",
+    "apellido_paterno": "ALONSO",
+    "apellido_materno": "AGUILAR",
+    "matricula": "CAR016-G",
+    "contrasenia": "$2b$10$trO/pfUqNGG74xVDFhqn4.2rKjIZnO5XW0o/ASF1PXFp3fdRMHSwC",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": null,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "2e347d15-dd63-4c3c-b2a6-1c4890882b81",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "/Xi54<.O0["
+  },
+  {
+    "nombre": "SUGELY",
+    "apellido_paterno": "WONG",
+    "apellido_materno": "CASTILL",
+    "matricula": "CAR020-G",
+    "contrasenia": "$2b$10$MS7caGrKLlqCpzZLx6qiBeuJ25V9k6dn2fyWdJk//9HcTgRVGG9nG",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9931364409,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "43ce06e2-7a70-4ac6-b5f0-24b360446380",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "vU_?FpK;]`"
+  },
+  {
+    "nombre": "ROSA ANDREA",
+    "apellido_paterno": "BRENA",
+    "apellido_materno": "MAYA",
+    "matricula": "CAR023-G",
+    "contrasenia": "$2b$10$fcNng7jfD2ZmT9UseV2dzO4Q72lghp2.6YztR16NqtOeS9IeM.VBO",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371895721,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "62901369-5f07-41ea-811b-16619de24df4",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "mMw5]tKij*"
+  },
+  {
+    "nombre": "FLOR DE AZALIA",
+    "apellido_paterno": "SANCHEZ",
+    "apellido_materno": "DE LA ROSA",
+    "matricula": "CAR019-G",
+    "contrasenia": "$2b$10$nFZDXA5T/qO5ONLfB7CaoOAHk6A1ns.940S05z6zqVorI.FlD9bsG",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371018074,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "cc2524aa-2856-471b-83c6-16978002fc55",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": ">iLY<h3l!@"
+  },
+  {
+    "nombre": "VICTOR HUGO",
+    "apellido_paterno": "ARIAS",
+    "apellido_materno": "VIVAS",
+    "matricula": "CAR022-G",
+    "contrasenia": "$2b$10$HgWc7SEr9mpe5QpMowKu8u5xl6qAvztiQecwanOfAUrJUz2cX0yyO",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371024870,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "8ca0360a-136a-41ab-bbb2-33534d8668a8",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "63EZi}-2s{"
+  },
+  {
+    "nombre": "ARACELI",
+    "apellido_paterno": "CASTILLO",
+    "apellido_materno": "LOPEZ",
+    "matricula": "CAR024-G",
+    "contrasenia": "$2b$10$XUBKF5cmY3SPDkkswEzZXed2d9QYuS.VShgviM9mkao6cELgJa1qi",
+    "puntos": 1000,
+    "correo": null,
+    "telefono": 9371683942,
+    "area": {
+      "id": "a4425a45-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Gastronomia",
+      "modificado_en": "2023-05-17T02:07:18.000Z"
+    },
+    "rol": {
+      "id": "a76b1ad3-f42d-11ed-89fb-6045bdeb1192",
+      "nombre": "Usuario",
+      "descripcion": "Usuario del portal"
+    },
+    "id": "21278535-1ac0-4e1b-a2ff-7c73e34b008e",
+    "activo": true,
+    "borrado_en": null,
+    "contraseñaDesencript": "mgi3)$Ydyj"
+  }
+]

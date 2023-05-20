@@ -304,6 +304,17 @@ export class EventService {
 
           _fechaInscripcion.setDate(_fechaInscripcionTmp.getDate());
 
+          // const fechaInscripcionYear = new Date(
+          //   _fechaInscripcion,
+          // ).getFullYear();
+          // const fechaInscripcionMonth = new Date(_fechaInscripcion).getMonth();
+          // const fechaInscripcionDay = new Date(_fechaInscripcion).getDate();
+
+          // const fecha_inscripcion_string = String(
+          //   `${fechaInscripcionMonth}/${fechaInscripcionDay}/${fechaInscripcionYear}`,
+          // );
+          // const fechaInscripcionNoHour = new Date(fecha_inscripcion_string);
+
           Logger.log(
             `Inscribiendo | ${usuario.matricula} | ${nameDay} | ${_fechaInscripcion}`,
           );
@@ -393,7 +404,12 @@ export class EventService {
         message: 'Se reservo el lugar con éxito.',
         lugar: `${lugar.numero}${lugar.area.nombre[0]}`,
       };
-    } catch (error) {}
+    } catch (error) {
+      return {
+        status: 'Failed',
+        message: 'Algo salio mal, hable con el administrador.',
+      };
+    }
   }
 
   getWeek(eventDate: Date) {

@@ -12,46 +12,46 @@ export class UserService {
     private readonly userRepository: Repository<Usuario>,
   ) {}
 
-  // async getAllUsers(res: Response) {
-  //   let response: IResponse;
-  //   // let credentials: [];
+  async getAllUsers(res: Response) {
+    let response: IResponse;
+    // let credentials: [];
 
-  //   try {
-  //     const users = await this.userRepository.find({
-  //       where: {
-  //         activo: true,
-  //         rol: {
-  //           nombre: 'Usuario',
-  //         },
-  //       },
-  //     });
+    try {
+      const users = await this.userRepository.find({
+        where: {
+          activo: true,
+          rol: {
+            nombre: 'Usuario',
+          },
+        },
+      });
 
-  //     const credentials = users.map((usuario) => {
-  //       const contrasenia = 10;
-  //       return {
-  //         nombre: usuario.nombre,
-  //         apellido: `${usuario.apellido_paterno} ${usuario.apellido_materno}`,
-  //         matricula: usuario.matricula,
-  //       };
-  //     });
+      const credentials = users.map((usuario) => {
+        const contrasenia = 10;
+        return {
+          nombre: usuario.nombre,
+          apellido: `${usuario.apellido_paterno} ${usuario.apellido_materno}`,
+          matricula: usuario.matricula,
+        };
+      });
 
-  //     response = {
-  //       success: true,
-  //       message: 'Todos los usuarios han sido traidos.',
-  //       data: users,
-  //     };
+      response = {
+        success: true,
+        message: 'Todos los usuarios han sido traidos.',
+        data: users,
+      };
 
-  //     res.status(200).json(response);
-  //   } catch (error) {
-  //     const response: IResponse = {
-  //       success: true,
-  //       message: error,
-  //       data: {},
-  //       error_code: 500,
-  //     };
-  //     res.status(500).json(response);
-  //   }
-  // }
+      res.status(200).json(response);
+    } catch (error) {
+      const response: IResponse = {
+        success: true,
+        message: error,
+        data: {},
+        error_code: 500,
+      };
+      res.status(500).json(response);
+    }
+  }
 
   async deleteUser(matricula: string) {
     try {

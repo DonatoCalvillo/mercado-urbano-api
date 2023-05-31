@@ -122,6 +122,7 @@ export class AuthService {
         rol,
         area,
         matricula,
+        puntos: 1500,
       });
 
       Logger.log(`Guardando usuario en base de datos. ===> ${matricula}`);

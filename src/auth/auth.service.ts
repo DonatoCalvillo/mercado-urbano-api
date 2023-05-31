@@ -136,6 +136,7 @@ export class AuthService {
         correo: user.correo,
         telefono: user.telefono,
         area: user.area.nombre,
+        puntos: 1500,
       };
 
       Logger.log(`Usuario creado exitosamente. ===> ${matricula}`);

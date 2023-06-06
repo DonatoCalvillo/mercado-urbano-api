@@ -58,7 +58,9 @@ export class AuthService {
         ...userData
       }: CreateUsuarioDto = createUsuarioDto;
 
-      if (userData.telefono) console.log('Telefono');
+      if (userData.telefono) {
+      }
+
       if (userData.correo != undefined) {
         if (await this.userValidation.VerifyEmail(userData.correo))
           return this.httpResponse.NotFound(res, `Correo ya registrado.`);

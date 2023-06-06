@@ -18,6 +18,8 @@ import { IJwtPayload } from './interfaces';
 import { ValidLogTypes, logStandar } from 'src/helper/logStandar';
 import { IResponse } from 'src/interface/response.interface';
 import { Workbook } from 'exceljs';
+import { HttpResponse } from './strategies/errors.strategy';
+import { UserValidation } from './strategies/user.strategy';
 import { retry } from 'rxjs';
 
 @Injectable()
@@ -33,11 +35,14 @@ export class AuthService {
     private readonly areaRepository: Repository<Area>,
 
     private readonly jwtService: JwtService,
+
+    private readonly httpResponse: HttpResponse,
+
+    private readonly userValidation: UserValidation,
   ) {}
 
   async create(createUsuarioDto: CreateUsuarioDto, res: Response) {
     logStandar('CREANDO USUARIO', '-', ValidLogTypes.log);
-    let response: IResponse;
 
     try {
       const {
@@ -51,56 +56,21 @@ export class AuthService {
         fk_area,
         fk_rol,
         ...userData
-      } = createUsuarioDto;
+      }: CreateUsuarioDto = createUsuarioDto;
 
+      if (userData.telefono) console.log('Telefono');
       if (userData.correo != undefined) {
-        Logger.log(`Verificando correo: ${userData.correo}`);
-        const emailVerify = await this.useRepository.findOne({
-          where: { correo: userData.correo },
-        });
-
-        if (emailVerify) {
-          response = {
-            success: false,
-            message: `Correo ya registrado.`,
-            data: {},
-            error_code: 404,
-          };
-
-          return res.status(404).json(response);
-        }
+        if (await this.userValidation.VerifyEmail(userData.correo))
+          return this.httpResponse.NotFound(res, `Correo ya registrado.`);
       }
 
-      Logger.log(`Verificando rol: ${fk_rol}`);
-      const rol = await this.rolRepository.findOne({
-        where: { nombre: fk_rol },
-      });
+      const rol = await this.userValidation.VerifyRol(fk_rol);
+      if (!rol)
+        return this.httpResponse.NotFound(res, `Rol inexistente: ${fk_rol}`);
 
-      if (!rol) {
-        response = {
-          success: false,
-          message: `Rol inexistente: ${fk_rol}`,
-          data: {},
-          error_code: 404,
-        };
-
-        return res.status(404).json(response);
-      }
-
-      const area = await this.areaRepository.findOne({
-        where: { nombre: fk_area },
-      });
-
-      if (!area) {
-        response = {
-          success: false,
-          message: `Area inexistente id: ${fk_area}`,
-          data: {},
-          error_code: 404,
-        };
-
-        return res.status(404).json(response);
-      }
+      const area = await this.userValidation.VerifyArea(fk_area);
+      if (!area)
+        return this.httpResponse.NotFound(res, `Area inexistente: ${fk_area}`);
 
       Logger.log('Generando matricula nueva...');
       const secuencia = await this.useRepository.query(
@@ -125,41 +95,19 @@ export class AuthService {
         puntos: 1500,
       });
 
-      Logger.log(`Guardando usuario en base de datos. ===> ${matricula}`);
+      Logger.log(`Guardando usuario en base de datos. ==> ${matricula}`);
       await this.useRepository.save(user);
 
-      const newUser = {
-        nombre: user.nombre,
-        apellido_paterno: user.apellido_paterno,
-        apellido_materno: user.apellido_materno,
-        matricula: user.matricula,
-        contrasenia,
-        correo: user.correo,
-        telefono: user.telefono,
-        area: user.area.nombre,
-        puntos: 1500,
-      };
-
-      Logger.log(`Usuario creado exitosamente. ===> ${matricula}`);
-
-      response = {
-        success: true,
-        message: 'Usuario creado exitosamente.',
-        data: {
-          user: newUser,
-        },
-      };
-
-      return res.status(200).json(response);
+      Logger.log(`Usuario creado exitosamente. ==> ${matricula}`);
+      return this.httpResponse.Ok(res, 'Usuario creado exitosamente.', {
+        user,
+      });
     } catch (error) {
-      const response: IResponse = {
-        success: false,
-        message: 'Algo salio mal, favor de comunicarse con el administrador.',
-        data: {},
-        error_code: 500,
-      };
       Logger.error(error);
-      return res.status(500).json(response);
+      return this.httpResponse.Error(
+        res,
+        'Algo salio mal, favor de comunicarse con el administrador.',
+      );
     } finally {
       logStandar();
     }
@@ -168,76 +116,59 @@ export class AuthService {
   async login(loginUsuarioDto: LoginUsuarioDto, res: Response) {
     logStandar('LOGIN', '-', ValidLogTypes.log);
 
-    let response: IResponse;
+    const { contrasenia, matricula }: LoginUsuarioDto = loginUsuarioDto;
 
-    const { contrasenia, matricula } = loginUsuarioDto;
-
-    Logger.log(`Verificando usuario. ===> ${matricula}`);
+    Logger.log(`Verificando usuario. ==> ${matricula}`);
 
     try {
-      const user = await this.useRepository
-        .createQueryBuilder('usuario')
-        .select([
-          'usuario.matricula',
-          'usuario.puntos',
-          'usuario.nombre',
-          'usuario.contrasenia',
-          'usuario.apellido_paterno',
-          'usuario.apellido_materno',
-          'rol.nombre',
-          'area.nombre',
-        ])
-        .innerJoin('usuario.rol', 'rol')
-        .innerJoin('usuario.area', 'area')
-        .where('usuario.matricula =:matricula', { matricula })
-        .andWhere('rol.nombre =:nombre', { nombre: 'Usuario' })
-        .getOne();
+      const user: Usuario = await this.useRepository.findOne({
+        select: {
+          id: true,
+          matricula: true,
+          puntos: true,
+          nombre: true,
+          contrasenia: true,
+          apellido_paterno: true,
+          apellido_materno: true,
+        },
+        where: {
+          matricula,
+          rol: {
+            nombre: 'Usuario',
+          },
+        },
+      });
 
+      console.log(user);
       if (!user || !bcrypt.compareSync(contrasenia, user.contrasenia)) {
-        response = {
-          success: false,
-          message: `Credenciales invalidas.`,
-          data: {},
-          error_code: 401,
-        };
-
-        return res.status(401).json(response);
+        Logger.error('Credenciales invalidas.');
+        return this.httpResponse.NotFound(res, 'Credenciales invalidas.');
       }
 
-      const { area, nombre, apellido_paterno, apellido_materno, rol, puntos } =
-        user;
+      const { area, rol, ...finalUser } = user;
 
-      const rol_nombre = rol.nombre;
-
-      const final_user = {
-        matricula,
-        puntos,
-        nombre,
-        apellido_paterno,
-        apellido_materno,
-        rol_nombre,
+      const data = {
+        ...finalUser,
+        rol_nombre: rol.nombre,
         area: area.nombre,
       };
 
-      Logger.log(`Acceso verificado correctamente. ===> ${matricula}`);
+      Logger.log(`Acceso verificado correctamente. ==> ${matricula}`);
 
-      response = {
-        success: true,
-        message: 'Acceso de usuario exitoso.',
-        data: { user: final_user },
-        token: this.getJwtToken({ matricula: user.matricula }),
-      };
-
-      return res.status(200).json(response);
+      return this.httpResponse.Ok(
+        res,
+        'Acceso de usuario exitoso.',
+        { user: data },
+        this.getJwtToken({ matricula: user.matricula }),
+      );
     } catch (error) {
-      const response: IResponse = {
-        success: false,
-        message: 'Algo salio mal, favor de comunicarse con el administrador.',
-        data: {},
-        error_code: 500,
-      };
       Logger.error(error);
-      return res.status(500).json(response);
+
+      return this.httpResponse.Error(
+        res,
+        'Algo salio mal, favor de comunicarse con el administrador.',
+        error,
+      );
     } finally {
       logStandar();
     }

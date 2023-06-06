@@ -11,32 +11,35 @@ import { AuthController } from './auth.controller';
 
 import { Usuario, Rol, Area } from './entities';
 import { UsuarioEvento } from '../event/entities/usuario-evento.entity';
+import { HttpResponse } from './strategies/errors.strategy';
+import { UserValidation } from './strategies/user.strategy';
 
 @Module({
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy],
+  providers: [AuthService, JwtStrategy, HttpResponse, UserValidation],
   imports: [
     ConfigModule,
-    TypeOrmModule.forFeature([ Usuario, Rol, Area, UsuarioEvento ]),
+    TypeOrmModule.forFeature([Usuario, Rol, Area, UsuarioEvento]),
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
-      useFactory: ( configService: ConfigService ) => {
-        return { 
+      useFactory: (configService: ConfigService) => {
+        return {
           secret: configService.get('JWT_SECRET'),
           signOptions: {
-            expiresIn: '8h'
-          }
-        }
-      }
-    })
+            expiresIn: '8h',
+          },
+        };
+      },
+    }),
   ],
-  exports: [ 
-    TypeOrmModule, 
-    JwtStrategy, 
-    PassportModule, 
-    JwtModule
-  ]
+  exports: [
+    TypeOrmModule,
+    JwtStrategy,
+    PassportModule,
+    JwtModule,
+    HttpResponse,
+  ],
 })
 export class AuthModule {}

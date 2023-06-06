@@ -296,11 +296,11 @@ export class EventService {
         users.map((usuario, i) => {
           const _fechaInscripcion = new Date(fechaInscripcion);
 
-          if (i >= 0 && i <= 20) _fechaInscripcion.setHours(21);
-          else if (i > 10 && i <= 40) _fechaInscripcion.setHours(22);
-          else if (i > 40 && i <= 60) _fechaInscripcion.setHours(23);
-          else if (i > 60 && i <= 80) _fechaInscripcion.setHours(23);
-          else _fechaInscripcion.setHours(10);
+          if (i >= 0 && i <= 20) _fechaInscripcion.setHours(14);
+          else if (i > 10 && i <= 40) _fechaInscripcion.setHours(15);
+          else if (i > 40 && i <= 60) _fechaInscripcion.setHours(16);
+          else if (i > 60 && i <= 80) _fechaInscripcion.setHours(17);
+          else _fechaInscripcion.setHours(18);
 
           _fechaInscripcion.setDate(_fechaInscripcionTmp.getDate());
 

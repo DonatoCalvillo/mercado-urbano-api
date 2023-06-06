@@ -43,6 +43,7 @@ export class CreateUsuarioDto {
   @IsEmail()
   correo: string;
 
+  @IsOptional()
   @IsString({
     message: 'El numero de telefono debe ser una cadena de caracteres.',
   })

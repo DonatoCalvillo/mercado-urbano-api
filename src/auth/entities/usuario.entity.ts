@@ -13,6 +13,7 @@ import {
 import { Rol } from './rol.entity';
 import { Area } from './area.entity';
 import { UsuarioEvento } from '../../event/entities/usuario-evento.entity';
+import { IsOptional } from 'class-validator';
 
 @Entity('usuario')
 export class Usuario {
